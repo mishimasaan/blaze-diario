@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Blaze Diários — escolha seu diário, confira os horários e garanta sua vaga."
+  >
+
+  <title>Diários — Blaze Diários</title>
+  
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/global.css">
+
+  <link rel="stylesheet" href="./css/diarios.css">
+
+  <link rel="stylesheet" href="./css/components/navbar.css">
+  <link rel="stylesheet" href="./css/components/button-animation.css">
+  <link rel="stylesheet" href="./css/components/discord.css">
+  <link rel="stylesheet" href="./css/components/footer.css">
+</head>
+
+<body>
+
+  <div id="navbar-component"></div>
+
+  <main class="diarios">
+
+    <section class="diarios-hero">
+
+      <div class="container">
+
+        <h1 class="diarios-hero__title">
+          Escolha seu
+          <strong>diário Blaze</strong>
+        </h1>
+
+        <p class="diarios-hero__description">
+          Escolha o modo, confira os horários disponíveis
+          e garanta sua vaga.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="diarios-board">
+
+      <div class="container">
+
+        <div
+          class="diarios-tabs"
+          role="tablist"
+          aria-label="Modo do diário"
+        >
+
+          <button
+            class="diarios-tab is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            data-diario="solo"
+          >
+            Solo
+          </button>
+
+          <button
+            class="diarios-tab"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            data-diario="duo"
+          >
+            Duo
+          </button>
+
+        </div>
+
+        <div class="diarios-info">
+
+          <div>
+
+            <span class="diarios-info__label">
+              Modo selecionado
+            </span>
+
+            <strong
+              class="diarios-info__name"
+              id="diario-name"
+            >
+              Diário Solo
+            </strong>
+
+          </div>
+
+          <div class="diarios-info__price">
+
+            <span class="diarios-info__label">
+              Inscrição
+            </span>
+
+            <strong id="diario-price">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div
+          class="diarios-list"
+          id="diarios-list"
+        ></div>
+
+        <div
+          class="diarios-status"
+          id="diarios-status"
+        >
+          Carregando horários...
+        </div>
+
+      </div>
+
+    </section>
+
+    <div id="discord-component"></div>
+      <div id="discord-float-component"></div>
+
+  </main>
+
+  <div class="checkout-modal" id="checkout-modal" hidden>
+    <div class="checkout-modal__backdrop" data-checkout-close></div>
+    <section class="checkout-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="checkout-title">
+      <button class="checkout-modal__close" type="button" data-checkout-close aria-label="Fechar">×</button>
+      <div id="checkout-content"></div>
+    </section>
+  </div>
+
+  <div id="footer-component"></div>
+
+  <script src="./js/comp/botton.js"></script>
+  <script src="./js/main.js"></script>
+
+  <script src="./js/diarios.js"></script>
+
+</body>
+
+</html>

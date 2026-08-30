@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Regras oficiais dos diários Blaze Diários."
+  >
+
+  <title>Regras — Blaze Diários</title>
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/regras.css">
+
+  <link
+    rel="stylesheet"
+    href="./css/components/navbar.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/button-animation.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/footer.css"
+  >
+</head>
+
+<body>
+
+  <div id="navbar-component"></div>
+
+  <main class="rules-page">
+
+    <section class="rules-hero">
+
+      <div class="container">
+
+        <h1 class="rules-hero__title">
+          Regras dos
+          <strong>diários</strong>
+        </h1>
+
+        <p class="rules-hero__description">
+          Nosso objetivo é manter partidas justas, organizadas
+          e competitivas. Leia atentamente o regulamento antes
+          de garantir sua vaga.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="rules">
+
+      <div class="container rules__layout">
+
+        <aside class="rules-nav">
+
+          <span class="rules-nav__title">
+            Categorias
+          </span>
+
+          <button
+            class="rules-nav__button is-active"
+            type="button"
+            data-category="geral"
+          >
+            <span class="rules-nav__number">
+              01
+            </span>
+
+            <span>
+              Regras gerais
+            </span>
+          </button>
+
+          <button
+            class="rules-nav__button"
+            type="button"
+            data-category="partida"
+          >
+            <span class="rules-nav__number">
+              02
+            </span>
+
+            <span>
+              Durante a partida
+            </span>
+          </button>
+
+          <button
+            class="rules-nav__button"
+            type="button"
+            data-category="hack"
+          >
+            <span class="rules-nav__number">
+              03
+            </span>
+
+            <span>
+              Hack e trapaças
+            </span>
+          </button>
+
+          <button
+            class="rules-nav__button"
+            type="button"
+            data-category="pagamentos"
+          >
+            <span class="rules-nav__number">
+              04
+            </span>
+
+            <span>
+              Pagamentos
+            </span>
+          </button>
+
+          <button
+            class="rules-nav__button"
+            type="button"
+            data-category="punicoes"
+          >
+            <span class="rules-nav__number">
+              05
+            </span>
+
+            <span>
+              Punições
+            </span>
+          </button>
+
+          <button
+            class="rules-nav__button"
+            type="button"
+            data-category="analise"
+          >
+            <span class="rules-nav__number">
+              06
+            </span>
+
+            <span>
+              Análise
+            </span>
+          </button>
+
+        </aside>
+
+        <div class="rules__content">
+
+          <div
+            class="rules-category is-active"
+            data-rules-category="geral"
+          >
+
+            <header class="rules-category__header">
+
+              <div>
+
+                <span class="rules-category__eyebrow">
+                  Categoria 01
+                </span>
+
+                <h2 class="rules-category__title">
+                  Regras gerais
+                </h2>
+
+              </div>
+
+              <span class="rules-category__count">
+                04 regras
+              </span>
+
+            </header>
+
+            <div class="rules-list">
+
+              <article class="rule-item is-open">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="true"
+                >
+                  <span class="rule-item__number">
+                    01
+                  </span>
+
+                  <span class="rule-item__title">
+                    Nick da inscrição
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Informe corretamente o nick da conta que
+                      participará da partida. O nick registrado
+                      será utilizado para identificar o jogador
+                      e validar kills, Booyah e demais resultados.
+                      É responsabilidade do participante conferir
+                      os dados antes de confirmar a inscrição.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    02
+                  </span>
+
+                  <span class="rule-item__title">
+                    Horário e entrada na sala
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Confira o horário escolhido antes de
+                      finalizar sua inscrição. O participante
+                      deve entrar na sala dentro do período
+                      informado pela organização e estar pronto
+                      para o início da partida. Atrasos ou
+                      ausência por responsabilidade do jogador
+                      não garantem reembolso.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    03
+                  </span>
+
+                  <span class="rule-item__title">
+                    Jogadores não inscritos
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      É proibido compartilhar os dados da sala
+                      ou permitir a entrada de jogadores sem uma
+                      vaga confirmada. Apenas os participantes
+                      registrados naquele diário poderão disputar
+                      a partida.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    04
+                  </span>
+
+                  <span class="rule-item__title">
+                    Liberdade dentro da partida
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Não existem restrições de personagens,
+                      pets, armas ou rotas. O participante pode
+                      utilizar livremente os recursos normais
+                      disponibilizados pelo Free Fire, desde que
+                      nenhuma vantagem irregular seja utilizada.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+          <div
+            class="rules-category"
+            data-rules-category="partida"
+            hidden
+          >
+
+            <header class="rules-category__header">
+
+              <div>
+
+                <span class="rules-category__eyebrow">
+                  Categoria 02
+                </span>
+
+                <h2 class="rules-category__title">
+                  Durante a partida
+                </h2>
+
+              </div>
+
+              <span class="rules-category__count">
+                04 regras
+              </span>
+
+            </header>
+
+            <div class="rules-list">
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    01
+                  </span>
+
+                  <span class="rule-item__title">
+                    Formação de alianças
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Não é permitido combinar vantagens com
+                      outros participantes. No Solo, jogadores
+                      não podem formar equipes, evitar confrontos
+                      de maneira combinada ou facilitar eliminações.
+                      No Duo, a mesma regra se aplica entre
+                      duplas diferentes.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    02
+                  </span>
+
+                  <span class="rule-item__title">
+                    Exploração de falhas
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Explorar intencionalmente bugs ou falhas
+                      do jogo para conseguir uma vantagem
+                      anormal é proibido. Situações suspeitas
+                      poderão ser analisadas pela equipe antes
+                      da liberação da premiação.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    03
+                  </span>
+
+                  <span class="rule-item__title">
+                    Problemas individuais
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Quedas de internet, bateria descarregada,
+                      travamentos do aparelho, fechamento do
+                      jogo ou outros problemas individuais são
+                      de responsabilidade do participante e não
+                      garantem reinício ou reembolso.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    04
+                  </span>
+
+                  <span class="rule-item__title">
+                    Problemas gerais
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Quando uma falha comprometer a sala ou
+                      atingir vários participantes, a organização
+                      analisará o ocorrido. Dependendo da situação,
+                      a partida poderá ser reiniciada, cancelada
+                      ou receber outra solução definida pela equipe.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+          <div
+            class="rules-category"
+            data-rules-category="hack"
+            hidden
+          >
+
+            <header class="rules-category__header">
+
+              <div>
+
+                <span class="rules-category__eyebrow">
+                  Categoria 03
+                </span>
+
+                <h2 class="rules-category__title">
+                  Hack e trapaças
+                </h2>
+
+              </div>
+
+              <span class="rules-category__count">
+                04 regras
+              </span>
+
+            </header>
+
+            <div class="rules-list">
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    01
+                  </span>
+
+                  <span class="rule-item__title">
+                    Vantagens externas
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Não é permitido utilizar cheats, hacks,
+                      scripts, macros, clientes modificados,
+                      bypasses, modificadores ou qualquer
+                      ferramenta externa criada para fornecer
+                      vantagem irregular durante a partida.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    02
+                  </span>
+
+                  <span class="rule-item__title">
+                    Eliminação por jogador irregular
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Caso um participante seja eliminado
+                      diretamente por um jogador que posteriormente
+                      tenha o uso de hack confirmado pela equipe,
+                      o valor da inscrição do jogador prejudicado
+                      será reembolsado.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    03
+                  </span>
+
+                  <span class="rule-item__title">
+                    Suspeita não significa confirmação
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Uma jogada suspeita, denúncia ou replay
+                      incomum não significa automaticamente
+                      que houve hack. A situação deverá passar
+                      pela análise da equipe antes da aplicação
+                      de punições ou reembolsos.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    04
+                  </span>
+
+                  <span class="rule-item__title">
+                    Hack confirmado
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Quando uma trapaça for confirmada, o jogador
+                      poderá ser desclassificado imediatamente,
+                      perder os valores conquistados naquela
+                      partida e ser impedido de participar de
+                      futuros diários.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+          <div
+            class="rules-category"
+            data-rules-category="pagamentos"
+            hidden
+          >
+
+            <header class="rules-category__header">
+
+              <div>
+
+                <span class="rules-category__eyebrow">
+                  Categoria 04
+                </span>
+
+                <h2 class="rules-category__title">
+                  Pagamentos e premiações
+                </h2>
+
+              </div>
+
+              <span class="rules-category__count">
+                04 regras
+              </span>
+
+            </header>
+
+            <div class="rules-list">
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    01
+                  </span>
+
+                  <span class="rule-item__title">
+                    Pagamento por kills
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Cada kill válida será paga conforme o valor
+                      informado para o diário. Apenas eliminações
+                      vinculadas ao nick registrado e consideradas
+                      válidas pela organização serão contabilizadas.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    02
+                  </span>
+
+                  <span class="rule-item__title">
+                    Premiação por Booyah
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      O Booyah será pago conforme o valor
+                      divulgado para aquele diário. A premiação
+                      poderá ser acumulada com o valor das kills
+                      válidas conquistadas na mesma partida.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    03
+                  </span>
+
+                  <span class="rule-item__title">
+                    Resgate da premiação
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+  Após o encerramento da partida, jogadores com kills válidas
+  ou Booyah deverão abrir um ticket no Discord da Blaze Diários
+  e enviar a solicitação de pagamento diretamente pelo ticket.
+  A equipe fará a conferência das kills e/ou Booyah antes de
+  realizar o pagamento.
+</p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    04
+                  </span>
+
+                  <span class="rule-item__title">
+                    Cancelamentos e reembolsos
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Após a confirmação da vaga e o início
+                      da partida, desistências, atrasos ou
+                      problemas individuais não garantem
+                      cancelamento ou reembolso. Casos
+                      excepcionais previstos neste regulamento
+                      serão analisados separadamente.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+          <div
+            class="rules-category"
+            data-rules-category="punicoes"
+            hidden
+          >
+
+            <header class="rules-category__header">
+
+              <div>
+
+                <span class="rules-category__eyebrow">
+                  Categoria 05
+                </span>
+
+                <h2 class="rules-category__title">
+                  Infrações e punições
+                </h2>
+
+              </div>
+
+              <span class="rules-category__count">
+                04 regras
+              </span>
+
+            </header>
+
+            <div class="rules-list">
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    01
+                  </span>
+
+                  <span class="rule-item__title">
+                    Advertências
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Infrações de menor gravidade poderão
+                      resultar em advertência. Reincidências
+                      poderão aumentar a penalidade aplicada
+                      ao participante.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    02
+                  </span>
+
+                  <span class="rule-item__title">
+                    Desclassificação
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Trapaças, formação de alianças proibidas,
+                      fraude, manipulação de resultados ou
+                      outras infrações graves poderão resultar
+                      em desclassificação e perda da premiação
+                      da partida.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    03
+                  </span>
+
+                  <span class="rule-item__title">
+                    Blacklist
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Infrações graves ou reincidentes poderão
+                      resultar na inclusão do jogador na blacklist
+                      da Blaze Diários. Dependendo do caso, o
+                      impedimento de participar poderá ser
+                      permanente.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    04
+                  </span>
+
+                  <span class="rule-item__title">
+                    Decisão da organização
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Situações não previstas neste regulamento
+                      serão analisadas pela equipe. A decisão
+                      considerará as evidências disponíveis,
+                      a gravidade da situação e o impacto causado
+                      à integridade da partida.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+          <div
+            class="rules-category"
+            data-rules-category="analise"
+            hidden
+          >
+
+            <header class="rules-category__header">
+
+              <div>
+
+                <span class="rules-category__eyebrow">
+                  Categoria 06
+                </span>
+
+                <h2 class="rules-category__title">
+                  Análise de segurança
+                </h2>
+
+              </div>
+
+              <span class="rules-category__count">
+                06 regras
+              </span>
+
+            </header>
+
+            <div class="rules-list">
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    01
+                  </span>
+
+                  <span class="rule-item__title">
+                    Convocação para análise
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Caso uma jogada, replay ou comportamento
+                      apresente indícios que precisem ser
+                      verificados, a equipe poderá convocar o
+                      participante para uma análise do aparelho.
+                      O jogador deverá atender à solicitação e
+                      seguir as orientações fornecidas pela
+                      equipe durante o procedimento.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    02
+                  </span>
+
+                  <span class="rule-item__title">
+                    Preservação das informações
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Após ser informado sobre uma análise,
+                      o participante não deverá apagar históricos,
+                      arquivos ou outros registros relevantes
+                      para a verificação. Também não deverá
+                      realizar alterações destinadas a ocultar
+                      informações antes ou durante o procedimento.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    03
+                  </span>
+
+                  <span class="rule-item__title">
+                    Alterações no sistema
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Aparelhos utilizados no diário não poderão
+                      possuir alterações ou ferramentas capazes
+                      de modificar o funcionamento normal do
+                      sistema com o objetivo de obter vantagem
+                      ou dificultar a análise. Isso inclui
+                      ambientes com Root, Shizuku ou mecanismos
+                      equivalentes, salvo situações previamente
+                      autorizadas pela administração.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    04
+                  </span>
+
+                  <span class="rule-item__title">
+                    Verificação em Android
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Em dispositivos Android, configurações,
+                      registros e aplicativos relevantes poderão
+                      fazer parte da verificação quando houver
+                      suspeita. Alterações realizadas depois da
+                      partida que prejudiquem a análise também
+                      poderão ser consideradas pela equipe ao
+                      decidir o resultado do procedimento.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    05
+                  </span>
+
+                  <span class="rule-item__title">
+                    Verificação em iOS
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Em dispositivos iOS, a equipe poderá
+                      solicitar a verificação de configurações
+                      e registros disponíveis no aparelho.
+                      Quando solicitado previamente pela
+                      organização, recursos necessários para
+                      comprovação deverão permanecer habilitados
+                      e os registros relacionados à partida não
+                      deverão ser removidos antes da análise.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+              <article class="rule-item">
+
+                <button
+                  class="rule-item__header"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="rule-item__number">
+                    06
+                  </span>
+
+                  <span class="rule-item__title">
+                    Recusa ou interferência na análise
+                  </span>
+
+                  <span class="rule-item__icon">
+                    +
+                  </span>
+                </button>
+
+                <div class="rule-item__content">
+
+                  <div class="rule-item__content-inner">
+
+                    <p>
+                      Recusar uma análise solicitada pela equipe,
+                      abandonar o procedimento, apagar evidências
+                      após a convocação ou interferir
+                      intencionalmente na verificação poderá
+                      resultar em W.O., perda da premiação e
+                      outras penalidades previstas neste
+                      regulamento. A punição será definida
+                      conforme a gravidade do ocorrido.
+                    </p>
+
+                  </div>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <div id="footer-component"></div>
+      <div id="discord-float-component"></div>
+
+  <script src="./js/comp/botton.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/regras.js"></script>
+
+</body>
+
+</html>

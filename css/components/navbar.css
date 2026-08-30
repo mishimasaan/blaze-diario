@@ -1,0 +1,647 @@
+.header {
+  position: relative;
+  z-index: 1000;
+  height: 92px;
+  border-bottom: 1px solid var(--color-border);
+  background: rgba(5, 8, 11, 0.96);
+}
+
+.header__content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 26px;
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__logo img {
+  width: 145px;
+  height: auto;
+  display: block;
+}
+
+.header__nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.header__link {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  color: var(--color-text);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.015em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 0.2s ease;
+}
+
+.header__link:hover,
+.header__link--active {
+  color: var(--color-white);
+}
+
+.header__link--active {
+  color: var(--color-primary);
+}
+
+.header__link--active::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 16px;
+  left: 0;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--color-primary);
+}
+
+.header-account {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header-user[hidden],
+.header-user__menu[hidden],
+.mobile-profile[hidden],
+.mobile-profile__logout[hidden],
+#header-discord-login[hidden],
+#mobile-discord-login[hidden] {
+  display: none;
+}
+
+.header .button--discord {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  min-height: 48px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--color-white);
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header .button--discord span {
+  display: none;
+}
+
+.header .button--discord img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  opacity: 0.82;
+  object-fit: contain;
+  pointer-events: none;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header .button--discord:hover {
+  border-color: rgba(255, 0, 30, 0.45);
+  background: rgba(255, 0, 30, 0.05);
+  transform: translateY(-1px);
+}
+
+.header .button--discord:hover img {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.header-user {
+  position: relative;
+}
+
+.header-user__button {
+  height: 48px;
+  min-height: 48px;
+  min-width: 132px;
+  max-width: 185px;
+  padding: 0 10px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid transparent;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.035);
+  color: var(--color-white);
+  font: inherit;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.header-user__button:hover {
+  border-color: rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.header-user__button:active {
+  background: rgba(255, 0, 30, 0.07);
+}
+
+.header-user__button[aria-expanded="true"] {
+  border-color: rgba(255, 0, 30, 0.28);
+  background: rgba(255, 0, 30, 0.045);
+}
+
+.header-user__avatar {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  display: block;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+  background: #101419;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.header-user__name {
+  min-width: 0;
+  max-width: 105px;
+  overflow: hidden;
+  color: var(--color-white);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.header-user__arrow {
+  margin-left: auto;
+  color: var(--color-muted);
+  font-size: 0.68rem;
+  line-height: 1;
+  pointer-events: none;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.header-user__button:hover .header-user__arrow {
+  color: var(--color-primary);
+}
+
+.header-user__button[aria-expanded="true"] .header-user__arrow {
+  color: var(--color-primary);
+  transform: rotate(180deg);
+}
+
+.header-user__menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 1100;
+  width: 205px;
+  padding: 6px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  background: #090c10;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.5);
+  animation: headerMenuIn 0.16s ease both;
+}
+
+@keyframes headerMenuIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-user__menu-item {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: var(--color-muted);
+  font: inherit;
+  font-size: 0.67rem;
+  font-weight: 650;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.header-user__menu-item:hover {
+  background: transparent;
+  color: var(--color-muted);
+}
+
+.header-user__menu-item:active {
+  background: transparent;
+  color: var(--color-muted);
+}
+
+.header-user__menu-icon {
+  width: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 20px;
+  color: var(--color-muted);
+  font-size: 0.82rem;
+  pointer-events: none;
+}
+
+.header-user__menu-item:hover .header-user__menu-icon {
+  color: var(--color-muted);
+}
+
+.header-user__menu-item--logout {
+  margin-top: 4px;
+  border-top: 1px solid var(--color-border);
+  border-radius: 0 0 5px 5px;
+  color: rgba(255, 75, 90, 0.9);
+}
+
+.header-user__menu-item--logout .header-user__menu-icon {
+  color: rgba(255, 75, 90, 0.75);
+}
+
+.header-user__menu-item--logout:hover,
+.header-user__menu-item--logout:active {
+  background: transparent;
+  color: rgba(255, 75, 90, 0.9);
+}
+
+.header-user__menu-item--logout:hover .header-user__menu-icon,
+.header-user__menu-item--logout:active .header-user__menu-icon {
+  color: rgba(255, 75, 90, 0.75);
+}
+
+.header__menu-button {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  background: transparent;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.header__menu-button:active {
+  border-color: rgba(255, 0, 30, 0.35);
+  background: rgba(255, 0, 30, 0.04);
+}
+
+.header__menu-button span {
+  width: 17px;
+  height: 1px;
+  display: block;
+  background: var(--color-white);
+  pointer-events: none;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.mobile-menu {
+  position: relative;
+  z-index: 1200;
+  display: none;
+  width: 100%;
+}
+
+.mobile-profile {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  min-height: 70px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  border-bottom: 1px solid var(--color-border);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 30, 0.035),
+      transparent 50%
+    );
+  box-sizing: border-box;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 0, 30, 0.08);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.mobile-profile:active {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 0, 30, 0.09),
+      transparent 65%
+    );
+}
+
+.mobile-profile__avatar {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50%;
+  background: #101419;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.mobile-profile__identity {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  pointer-events: none;
+}
+
+.mobile-profile__identity strong {
+  max-width: 220px;
+  overflow: hidden;
+  color: var(--color-white);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.mobile-profile__identity span {
+  max-width: 220px;
+  overflow: hidden;
+  color: var(--color-muted);
+  font-size: 0.62rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.mobile-profile__logout {
+  width: 100%;
+  min-height: 50px;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  color: rgba(255, 75, 90, 0.9);
+  font: inherit;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.mobile-profile__logout:active {
+  background: transparent;
+  color: rgba(255, 75, 90, 0.9);
+}
+
+@media (max-width: 1150px) {
+  .header__nav {
+    gap: 25px;
+  }
+
+  .header-user__button {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .header-user__avatar {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+  }
+
+  .header-user__name,
+  .header-user__arrow {
+    display: none;
+  }
+
+  .header-user__menu {
+    width: 215px;
+  }
+
+  .header-user__menu-item {
+    min-height: 48px;
+    padding: 0 13px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    height: auto;
+  }
+
+  .header__content {
+    min-height: 76px;
+  }
+
+  .header__logo img {
+    width: 128px;
+  }
+
+  .header__nav {
+    display: none;
+  }
+
+  .header-account {
+    display: none;
+  }
+
+  .header__menu-button {
+    display: flex;
+  }
+
+  .mobile-menu {
+    width: 100%;
+    max-height: none;
+    height: auto;
+    overflow: visible;
+    flex-direction: column;
+    border-top: 1px solid var(--color-border);
+    background: #070a0d;
+    padding-bottom: 14px;
+    box-sizing: border-box;
+  }
+
+  .mobile-menu a {
+    position: relative;
+    width: 100%;
+    min-height: 54px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+      color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .mobile-menu a:hover {
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--color-primary);
+  }
+
+  .mobile-menu a:active {
+    background: rgba(255, 0, 30, 0.05);
+    color: var(--color-primary);
+  }
+
+  .mobile-menu a.header__link--active {
+    color: var(--color-primary);
+    background: rgba(255, 0, 30, 0.04);
+  }
+
+  .mobile-menu a.header__link--active::after {
+    content: "";
+    position: absolute;
+    left: 16px;
+    bottom: 0;
+    width: 52px;
+    height: 2px;
+    border-radius: 3px;
+    background: var(--color-primary);
+  }
+
+  #mobile-discord-login {
+    color: var(--color-primary);
+    min-height: 54px;
+  }
+
+  .mobile-profile {
+    min-height: 72px;
+    flex-shrink: 0;
+  }
+
+  .mobile-profile__logout {
+    min-height: 54px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .header__content {
+    min-height: 70px;
+  }
+
+  .header__logo img {
+    width: 118px;
+  }
+
+  .header__menu-button {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .mobile-menu {
+    max-height: none;
+    height: auto;
+    overflow: visible;
+    padding-bottom: 18px;
+  }
+
+  .mobile-profile {
+    min-height: 68px;
+    padding: 13px 14px;
+  }
+
+  .mobile-profile__avatar {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+  }
+
+  .mobile-profile__identity strong,
+  .mobile-profile__identity span {
+    max-width: 190px;
+  }
+
+  .mobile-menu a {
+    min-height: 54px;
+    padding: 0 16px;
+  }
+
+  .mobile-profile__logout {
+    min-height: 54px;
+    padding: 0 16px;
+  }
+}

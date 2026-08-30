@@ -1,0 +1,85 @@
+<style>
+.discord-float {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9000;
+
+  width: 90px;
+  height: 90px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-primary);
+  border-radius: 50%;
+
+  background: #080b0e;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.35);
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.discord-float:hover {
+  background: var(--color-primary);
+
+  transform: translateY(-2px);
+}
+
+.discord-float:active {
+  transform: scale(0.94);
+}
+
+.discord-float img {
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+}
+
+body.checkout-open .discord-float {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .discord-float {
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .discord-float {
+    right: 14px;
+    bottom: 14px;
+
+    width: 48px;
+    height: 48px;
+  }
+
+  .discord-float img {
+    width: 20px;
+    height: 20px;
+  }
+}
+</style>
+
+<a
+  class="discord-float"
+  href="https://discord.gg/m8KpCNTN5m"
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label="Entrar no Discord"
+>
+  <img
+    src="./assets/icons/discord.svg"
+    alt=""
+  >
+</a>

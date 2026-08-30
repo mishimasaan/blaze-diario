@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Blaze Diários — diários de Free Fire, ranking, histórico e comunidade."
+  >
+
+  <title>Blaze Diários</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/reset.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/variables.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/home.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/navbar.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/button-animation.css"
+  >
+
+  <link
+  rel="stylesheet"
+  href="./css/components/booster.css"
+>
+
+  <link
+    rel="stylesheet"
+    href="./css/components/discord.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/footer.css"
+  >
+</head>
+
+<body>
+
+  <div id="navbar-component"></div>
+
+  <main>
+
+    <section class="hero">
+
+      <div class="container hero__content">
+
+        <div class="hero__text">
+
+          <h1 class="hero__title">
+            <span>
+              Diários
+            </span>
+
+            <strong>
+              Todos os dias!
+            </strong>
+          </h1>
+
+          <p class="hero__subtitle">
+            Os melhores diários apostados de
+            <strong>Free Fire</strong>
+          </p>
+
+          <a
+            class="button button--primary"
+            href="./diarios.html#solo"
+          >
+            <span>
+              Ver diários disponíveis
+            </span>
+
+            <span aria-hidden="true">
+              →
+            </span>
+          </a>
+
+        </div>
+
+        <div
+          class="hero__visual"
+          aria-hidden="true"
+        >
+          <img
+            src="./assets/images/logo.png"
+            alt=""
+          >
+        </div>
+
+      </div>
+
+    </section>
+
+    <section
+      class="daily-modes"
+      aria-labelledby="daily-modes-title"
+    >
+
+      <div class="container">
+
+        <h2
+          class="sr-only"
+          id="daily-modes-title"
+        >
+          Diários disponíveis
+        </h2>
+
+        <div class="daily-modes__grid">
+
+          <article
+            class="daily-card"
+            id="home-diario-solo"
+            data-diario="solo"
+          >
+
+            <header class="daily-card__header">
+
+              <div class="daily-card__type-icon">
+
+                <img
+                  src="./assets/icons/user.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+              </div>
+
+              <h3 class="daily-card__title">
+                Diário
+
+                <strong id="home-solo-name">
+                  Solo
+                </strong>
+              </h3>
+
+            </header>
+
+            <div class="daily-card__stats">
+
+              <div class="daily-stat">
+
+                <img
+                  src="./assets/icons/money.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="daily-stat__label">
+                  Inscrição
+                </span>
+
+                <strong
+                  class="daily-stat__value"
+                  id="home-solo-price"
+                >
+                  —
+                </strong>
+
+              </div>
+
+              <div class="daily-stat">
+
+                <img
+                  src="./assets/icons/skull.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="daily-stat__label">
+                  Valor por kill
+                </span>
+
+                <strong
+                  class="daily-stat__value"
+                  id="home-solo-kill"
+                >
+                  —
+                </strong>
+
+              </div>
+
+              <div class="daily-stat">
+
+                <img
+                  src="./assets/icons/crown.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="daily-stat__label">
+                  Booyah
+                </span>
+
+                <strong
+                  class="daily-stat__value"
+                  id="home-solo-booyah"
+                >
+                  —
+                </strong>
+
+              </div>
+
+            </div>
+
+            <a
+              class="button button--card"
+              id="home-solo-button"
+              href="./diarios.html#solo"
+            >
+              <span>
+                Ver detalhes
+              </span>
+
+              <span aria-hidden="true">
+                →
+              </span>
+            </a>
+
+          </article>
+
+          <article
+            class="daily-card"
+            id="home-diario-duo"
+            data-diario="duo"
+          >
+
+            <header class="daily-card__header">
+
+              <div class="daily-card__type-icon">
+
+                <img
+                  src="./assets/icons/users.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+              </div>
+
+              <h3 class="daily-card__title">
+                Diário
+
+                <strong id="home-duo-name">
+                  Duo
+                </strong>
+              </h3>
+
+            </header>
+
+            <div class="daily-card__stats">
+
+              <div class="daily-stat">
+
+                <img
+                  src="./assets/icons/money.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="daily-stat__label">
+                  Inscrição
+                </span>
+
+                <strong
+                  class="daily-stat__value"
+                  id="home-duo-price"
+                >
+                  —
+                </strong>
+
+              </div>
+
+              <div class="daily-stat">
+
+                <img
+                  src="./assets/icons/skull.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="daily-stat__label">
+                  Valor por kill
+                </span>
+
+                <strong
+                  class="daily-stat__value"
+                  id="home-duo-kill"
+                >
+                  —
+                </strong>
+
+              </div>
+
+              <div class="daily-stat">
+
+                <img
+                  src="./assets/icons/crown.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+                <span class="daily-stat__label">
+                  Booyah
+                </span>
+
+                <strong
+                  class="daily-stat__value"
+                  id="home-duo-booyah"
+                >
+                  —
+                </strong>
+
+              </div>
+
+            </div>
+
+            <a
+              class="button button--card"
+              id="home-duo-button"
+              href="./diarios.html#duo"
+            >
+              <span>
+                Em breve
+              </span>
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section
+      class="benefits"
+      aria-labelledby="benefits-title"
+    >
+
+      <div class="container">
+
+        <h2
+          class="sr-only"
+          id="benefits-title"
+        >
+          Por que participar
+        </h2>
+
+        <div class="benefits__grid">
+
+          <article class="benefit-card">
+
+            <img
+              class="benefit-card__icon"
+              src="./assets/icons/calendar.svg"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <h3 class="benefit-card__title">
+              Diários
+
+              <strong>
+                Todos os dias
+              </strong>
+            </h3>
+
+            <p class="benefit-card__text">
+              Tem diário rolando todos os dias da semana.
+            </p>
+
+          </article>
+
+          <article class="benefit-card">
+
+            <img
+              class="benefit-card__icon"
+              src="./assets/icons/users.svg"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <h3 class="benefit-card__title">
+              Comunidade
+
+              <strong>
+                Ativa
+              </strong>
+            </h3>
+
+            <p class="benefit-card__text">
+              Uma comunidade ativa e engajada.
+            </p>
+
+          </article>
+
+          <article class="benefit-card">
+
+            <img
+              class="benefit-card__icon"
+              src="./assets/icons/shield.svg"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <h3 class="benefit-card__title">
+              Ambiente
+
+              <strong>
+                Seguro
+              </strong>
+            </h3>
+
+            <p class="benefit-card__text">
+              Regras claras e organização para todos jogarem tranquilos.
+            </p>
+
+          </article>
+
+          <article class="benefit-card">
+
+            <img
+              class="benefit-card__icon"
+              src="./assets/icons/lightning.svg"
+              alt=""
+              aria-hidden="true"
+            >
+
+            <h3 class="benefit-card__title">
+              Pagamento
+
+              <strong>
+                Rápido
+              </strong>
+            </h3>
+
+            <p class="benefit-card__text">
+              Pagamento ágil e sem complicação.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div id="discord-component"></div>
+          <div id="booster-component"></div>
+
+  </main>
+
+  <div id="footer-component"></div>
+
+      <div id="discord-float-component"></div>
+
+  <script src="./js/comp/botton.js"></script>
+  <script src="./js/comp/booster.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/home.js"></script>
+
+</body>
+
+</html>

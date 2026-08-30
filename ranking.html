@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Ranking Blaze Diários — confira os jogadores com mais vitórias, kills e lucro."
+  >
+
+  <title>Ranking — Blaze Diários</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/reset.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/variables.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/ranking.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/navbar.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/button-animation.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/discord.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/footer.css"
+  >
+</head>
+
+<body>
+
+  <div id="navbar-component"></div>
+
+  <main class="ranking">
+
+    <section class="ranking-hero">
+
+      <div class="container">
+
+        <h1 class="ranking-hero__title">
+          Ranking <strong>Blaze</strong>
+        </h1>
+
+        <p class="ranking-hero__description">
+          Veja quem está dominando os diários.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="ranking-board">
+
+      <div class="container">
+
+        <div class="ranking-controls">
+
+          <div
+            class="ranking-tabs"
+            role="tablist"
+            aria-label="Ordenar ranking"
+          >
+
+            <button
+              class="ranking-tab is-active"
+              type="button"
+              data-ranking="wins"
+            >
+              Vitórias
+            </button>
+
+            <button
+              class="ranking-tab"
+              type="button"
+              data-ranking="kills"
+            >
+              Kills
+            </button>
+
+            <button
+              class="ranking-tab"
+              type="button"
+              data-ranking="lucro"
+            >
+              Lucro
+            </button>
+
+          </div>
+
+          <div class="ranking-tools">
+
+            <div class="ranking-search">
+
+              <input
+                type="search"
+                id="ranking-search"
+                placeholder="Pesquisar jogador..."
+                autocomplete="off"
+                aria-label="Pesquisar jogador"
+              >
+
+              <button
+                class="ranking-search__clear"
+                id="ranking-search-clear"
+                type="button"
+                aria-label="Limpar pesquisa"
+                hidden
+              >
+                ×
+              </button>
+
+            </div>
+
+            <button
+              class="ranking-find-me"
+              id="ranking-find-me"
+              type="button"
+            >
+              Me encontrar
+            </button>
+
+          </div>
+
+        </div>
+
+        <div
+          class="ranking-me"
+          id="ranking-me"
+          hidden
+        >
+
+          <div class="ranking-me__user">
+
+            <img
+              class="ranking-me__avatar"
+              id="ranking-me-avatar"
+              src=""
+              alt=""
+            >
+
+            <div class="ranking-me__identity">
+
+              <span>
+                Sua posição
+              </span>
+
+              <strong id="ranking-me-name">
+                Jogador
+              </strong>
+
+              <small id="ranking-me-username">
+                @usuario
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="ranking-me__position">
+
+            <span id="ranking-me-label">
+              Vitórias
+            </span>
+
+            <strong id="ranking-me-position">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+        <div class="ranking-table">
+
+          <div class="ranking-table__header">
+
+            <span>
+              #
+            </span>
+
+            <span>
+              Jogador
+            </span>
+
+            <span id="ranking-column-label">
+              Vitórias
+            </span>
+
+          </div>
+
+          <div id="ranking-list"></div>
+
+        </div>
+
+        <div
+          class="ranking-empty"
+          id="ranking-empty"
+          hidden
+        >
+          Nenhum jogador encontrado.
+        </div>
+
+        <div class="ranking-pagination">
+
+          <button
+            class="ranking-pagination__button"
+            id="ranking-prev"
+            type="button"
+            aria-label="Página anterior"
+          >
+            &lt;
+          </button>
+
+          <div class="ranking-pagination__info">
+
+            <span>
+              Página
+            </span>
+
+            <strong id="ranking-page">
+              1
+            </strong>
+
+            <span>
+              de
+            </span>
+
+            <strong id="ranking-pages">
+              1
+            </strong>
+
+          </div>
+
+          <button
+            class="ranking-pagination__button"
+            id="ranking-next"
+            type="button"
+            aria-label="Próxima página"
+          >
+            &gt;
+          </button>
+
+        </div>
+
+        <div
+          class="ranking-status"
+          id="ranking-status"
+          hidden
+        ></div>
+
+      </div>
+
+    </section>
+
+    <div id="discord-component"></div>
+
+    <div id="discord-float-component"></div>
+
+  </main>
+
+  <div id="footer-component"></div>
+
+  <script src="./js/comp/botton.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/ranking.js"></script>
+  <script src="./js/comp/animation-ranking.js"></script>
+
+</body>
+
+</html>

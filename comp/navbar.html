@@ -1,0 +1,249 @@
+<header class="header">
+
+  <div class="container header__content">
+
+    <a
+      class="header__logo"
+      href="./index.html"
+      aria-label="Blaze Diários - Página inicial"
+    >
+      <img
+        src="./assets/images/logo.png"
+        alt="Blaze Diários"
+      >
+    </a>
+
+    <nav
+      class="header__nav"
+      aria-label="Navegação principal"
+    >
+
+      <a
+        class="header__link"
+        href="./index.html"
+      >
+        Início
+      </a>
+
+      <a
+        class="header__link"
+        href="./diarios.html"
+      >
+        Diários
+      </a>
+
+      <a
+        class="header__link"
+        href="./ranking.html"
+      >
+        Ranking
+      </a>
+
+      <a
+        class="header__link"
+        href="./regras.html"
+      >
+        Regras
+      </a>
+
+      <a
+        class="header__link"
+        href="./sobre.html"
+      >
+        Sobre
+      </a>
+
+      <a
+        class="header__link"
+        href="./contato.html"
+      >
+        Contato
+      </a>
+
+    </nav>
+
+    <div class="header-account">
+
+      <a
+        class="button button--discord"
+        id="header-discord-login"
+        href="https://api.noturnos.xyz/auth/discord"
+      >
+        <img
+          src="./assets/icons/discord.svg"
+          alt=""
+        >
+
+        <span>
+          Entrar no Discord
+        </span>
+      </a>
+
+      <div
+        class="header-user"
+        id="header-user"
+        hidden
+      >
+
+        <button
+          class="header-user__button"
+          id="header-user-button"
+          type="button"
+          aria-expanded="false"
+        >
+
+          <img
+            class="header-user__avatar"
+            id="header-user-avatar"
+            src=""
+            alt=""
+          >
+
+          <span
+            class="header-user__name"
+            id="header-user-name"
+          >
+            Usuário
+          </span>
+
+          <span class="header-user__arrow">
+            ▾
+          </span>
+
+        </button>
+
+        <div
+          class="header-user__menu"
+          id="header-user-menu"
+          hidden
+        >
+
+          <a
+            class="header-user__menu-item"
+            href="./stats.html"
+          >
+            <span class="header-user__menu-icon">
+              <img
+                src="./assets/icons/user2.svg"
+                alt=""
+              >
+            </span>
+
+            Meu perfil
+          </a>
+
+          <button
+            class="header-user__menu-item header-user__menu-item--logout"
+            id="header-user-logout"
+            type="button"
+          >
+            <span class="header-user__menu-icon">
+              <img
+                src="./assets/icons/left.svg"
+                alt=""
+              >
+            </span>
+
+            Sair
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <button
+      class="header__menu-button"
+      type="button"
+      aria-label="Abrir menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+  </div>
+
+  <nav
+    class="mobile-menu"
+    id="mobile-menu"
+    aria-label="Navegação mobile"
+  >
+
+    <div
+      class="mobile-profile"
+      id="mobile-profile"
+      hidden
+    >
+
+      <img
+        class="mobile-profile__avatar"
+        id="mobile-profile-avatar"
+        src=""
+        alt=""
+      >
+
+      <div class="mobile-profile__identity">
+
+        <strong id="mobile-profile-name">
+          Usuário
+        </strong>
+
+        <span id="mobile-profile-username">
+          @usuario
+        </span>
+
+      </div>
+
+    </div>
+
+    <a href="./index.html">
+      Início
+    </a>
+
+    <a href="./diarios.html">
+      Diários
+    </a>
+
+    <a href="./ranking.html">
+      Ranking
+    </a>
+
+    <a href="./stats.html">
+      Stats
+    </a>
+
+    <a href="./regras.html">
+      Regras
+    </a>
+
+    <a href="./sobre.html">
+      Sobre
+    </a>
+
+    <a href="./contato.html">
+      Contato
+    </a>
+
+    <a
+      id="mobile-discord-login"
+      href="https://api.noturnos.xyz/auth/discord"
+    >
+      Entrar no Discord
+    </a>
+
+    <button
+      class="mobile-profile__logout"
+      id="mobile-profile-logout"
+      type="button"
+      hidden
+    >
+      Sair
+    </button>
+
+  </nav>
+
+</header>

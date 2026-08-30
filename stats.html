@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Meu perfil Blaze Diários — acompanhe suas estatísticas."
+  >
+
+  <title>Meu Perfil — Blaze Diários</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/reset.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/variables.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/navbar.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/button-animation.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/discord.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/footer.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/stats.css"
+  >
+</head>
+
+<body>
+
+  <div id="navbar-component"></div>
+
+  <main class="stats">
+
+    <section class="stats-hero">
+
+      <div class="container">
+
+        <span class="stats-hero__eyebrow">
+          Sua conta
+        </span>
+
+        <h1 class="stats-hero__title">
+          Meu <strong>Perfil</strong>
+        </h1>
+
+        <p class="stats-hero__description">
+          Veja seu desempenho nos diários.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="stats-board">
+
+      <div class="container">
+
+        <div
+          class="stats-loading"
+          id="stats-loading"
+        >
+          <span class="stats-loading__dot"></span>
+
+          Carregando perfil
+        </div>
+
+        <div
+          class="stats-error"
+          id="stats-error"
+          hidden
+        >
+
+          <span class="stats-error__eyebrow">
+            Discord
+          </span>
+
+          <h2>
+            Conecte sua conta
+          </h2>
+
+          <p id="stats-error-text">
+            Entre com seu Discord para visualizar suas estatísticas.
+          </p>
+
+          <a
+            class="stats-error__button"
+            href="https://api.noturnos.xyz/auth/discord"
+          >
+            Conectar Discord
+          </a>
+
+        </div>
+
+        <div
+          class="stats-content"
+          id="stats-content"
+          hidden
+        >
+
+          <article class="stats-profile">
+
+            <div class="stats-profile__user">
+
+              <div class="stats-profile__avatar-wrap">
+
+                <img
+                  class="stats-profile__avatar"
+                  id="stats-avatar"
+                  src=""
+                  alt=""
+                >
+
+              </div>
+
+              <div class="stats-profile__identity">
+
+                <h2 id="stats-display-name">
+                  Jogador
+                </h2>
+
+                <span
+                  class="stats-profile__username"
+                  id="stats-username"
+                >
+                  @usuario
+                </span>
+
+              </div>
+
+            </div>
+
+            <div class="stats-profile__connected">
+
+              <span></span>
+
+              Conectado
+
+            </div>
+
+          </article>
+
+          <section
+            class="stats-grid"
+            aria-label="Suas estatísticas"
+          >
+
+            <article class="stats-card">
+
+              <div class="stats-card__icon">
+
+                <img
+                  src="./assets/icons/crown.svg"
+                  alt=""
+                >
+
+              </div>
+
+              <div class="stats-card__content">
+
+                <span class="stats-card__label">
+                  Booyahs
+                </span>
+
+                <strong id="stats-booyahs">
+                  0
+                </strong>
+
+              </div>
+
+            </article>
+
+            <article class="stats-card">
+
+              <div class="stats-card__icon">
+
+                <img
+                  src="./assets/icons/skull.svg"
+                  alt=""
+                >
+
+              </div>
+
+              <div class="stats-card__content">
+
+                <span class="stats-card__label">
+                  Kills
+                </span>
+
+                <strong id="stats-kills">
+                  0
+                </strong>
+
+              </div>
+
+            </article>
+
+            <article class="stats-card stats-card--profit">
+
+              <div class="stats-card__icon">
+
+                <img
+                  src="./assets/icons/money.svg"
+                  alt=""
+                >
+
+              </div>
+
+              <div class="stats-card__content">
+
+                <span class="stats-card__label">
+                  Lucro
+                </span>
+
+                <strong id="stats-lucro">
+                  R$ 0,00
+                </strong>
+
+              </div>
+
+            </article>
+
+            <article class="stats-card stats-card--ranking">
+
+              <div class="stats-card__ranking-content">
+
+                <span class="stats-card__label">
+                  Posições no ranking
+                </span>
+
+                <div class="stats-rankings">
+
+                  <div class="stats-ranking-item">
+
+                    <div class="stats-ranking-item__info">
+
+                      <div class="stats-ranking-item__icon">
+
+                        <img
+                          src="./assets/icons/crown.svg"
+                          alt=""
+                        >
+
+                      </div>
+
+                      <span class="stats-ranking-item__name">
+                        Booyahs
+                      </span>
+
+                    </div>
+
+                    <strong id="stats-rank-wins">
+                      —
+                    </strong>
+
+                  </div>
+
+                  <div class="stats-ranking-item">
+
+                    <div class="stats-ranking-item__info">
+
+                      <div class="stats-ranking-item__icon">
+
+                        <img
+                          src="./assets/icons/skull.svg"
+                          alt=""
+                        >
+
+                      </div>
+
+                      <span class="stats-ranking-item__name">
+                        Kills
+                      </span>
+
+                    </div>
+
+                    <strong id="stats-rank-kills">
+                      —
+                    </strong>
+
+                  </div>
+
+                  <div class="stats-ranking-item">
+
+                    <div class="stats-ranking-item__info">
+
+                      <div class="stats-ranking-item__icon">
+
+                        <img
+                          src="./assets/icons/money.svg"
+                          alt=""
+                        >
+
+                      </div>
+
+                      <span class="stats-ranking-item__name">
+                        Lucro
+                      </span>
+
+                    </div>
+
+                    <strong id="stats-rank-lucro">
+                      —
+                    </strong>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </article>
+
+          </section>
+
+          <div class="stats-note">
+
+            <span class="stats-note__line"></span>
+
+            <p>
+              Estatísticas vinculadas à sua conta do Discord.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <div id="discord-component"></div>
+
+    <div id="discord-float-component"></div>
+
+  </main>
+
+  <div id="footer-component"></div>
+
+  <script src="./js/comp/botton.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/stats.js"></script>
+
+</body>
+
+</html>

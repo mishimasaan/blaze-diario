@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Entre em contato com a equipe Blaze Diários."
+  >
+
+  <title>
+    Contato — Blaze Diários
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="./css/reset.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/variables.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/global.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/contato.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/contato.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/navbar.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/button-animation.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="./css/components/footer.css"
+  >
+</head>
+
+<body>
+
+  <div id="navbar-component"></div>
+
+  <main class="contact">
+
+    <section class="contact-hero">
+      <div class="container contact-hero__content">
+
+        <div class="contact-hero__text">
+
+          <h1 class="contact-hero__title">
+            Fale
+            <strong>
+              conosco
+            </strong>
+          </h1>
+
+          <p class="contact-hero__description">
+            Está com dúvidas, precisa de ajuda ou quer falar com a equipe?
+            Entre em contato pelos canais abaixo.
+          </p>
+
+        </div>
+
+        <div
+          class="contact-hero__visual"
+          aria-hidden="true"
+        >
+          <div class="contact-hero__circle"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <section
+      class="contact-channels"
+      aria-labelledby="contact-channels-title"
+    >
+      <div class="container">
+
+        <div class="contact-section-title">
+
+          <span></span>
+
+          <h2 id="contact-channels-title">
+            Canais de
+            <strong>
+              contato
+            </strong>
+          </h2>
+
+          <span></span>
+
+        </div>
+
+        <div class="contact-channels__grid">
+
+          <a
+            class="contact-channel"
+            href="https://discord.gg/m8KpCNTN5m"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <div class="contact-channel__icon">
+
+              <img
+                src="./assets/icons/discord2.svg"
+                alt=""
+                aria-hidden="true"
+              >
+
+            </div>
+
+            <div class="contact-channel__content">
+
+              <strong class="contact-channel__title">
+                Discord
+              </strong>
+
+              <p class="contact-channel__description">
+                Entre no nosso servidor e fale diretamente com a equipe.
+              </p>
+
+              <span class="contact-channel__button">
+                Entrar no Discord
+
+                <span aria-hidden="true">
+                  →
+                </span>
+              </span>
+
+            </div>
+
+          </a>
+
+          <a
+            class="contact-channel"
+            href="mailto:blazediarios@gmail.com"
+          >
+
+            <div class="contact-channel__icon">
+
+              <img
+                src="./assets/icons/mail.svg"
+                alt=""
+                aria-hidden="true"
+              >
+
+            </div>
+
+            <div class="contact-channel__content">
+
+              <strong class="contact-channel__title">
+                E-mail
+              </strong>
+
+              <p class="contact-channel__description">
+                Envie sua mensagem e responderemos o mais rápido possível.
+              </p>
+
+              <span class="contact-channel__button">
+                Enviar e-mail
+
+                <span aria-hidden="true">
+                  →
+                </span>
+              </span>
+
+            </div>
+
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section
+      class="contact-staff"
+      aria-labelledby="contact-staff-title"
+    >
+      <div class="container">
+
+        <div class="contact-section-title">
+
+          <span></span>
+
+          <h2 id="contact-staff-title">
+            Nossa
+            <strong>
+              equipe
+            </strong>
+          </h2>
+
+          <span></span>
+
+        </div>
+
+        <p class="contact-staff__description">
+          Conheça as pessoas responsáveis pelo Blaze Diários.
+        </p>
+
+        <div class="contact-staff__groups">
+
+          
+          <section
+            class="contact-staff__group"
+            data-role="owner"
+          >
+
+            <div class="contact-staff__group-header">
+
+              <span class="contact-staff__group-line"></span>
+
+              <h3 class="contact-staff__group-title">
+                Owners
+              </h3>
+
+            </div>
+
+            <div
+              class="contact-staff__grid"
+              id="contact-staff-owner"
+            ></div>
+
+          </section>
+
+          
+          <section
+            class="contact-staff__group"
+            data-role="admin"
+          >
+
+            <div class="contact-staff__group-header">
+
+              <span class="contact-staff__group-line">
+
+                <img
+                  src="./assets/icons/admin.svg"
+                  alt=""
+                  aria-hidden="true"
+                >
+
+              </span>
+
+              <h3 class="contact-staff__group-title">
+                Administração
+              </h3>
+
+            </div>
+
+            <div
+              class="contact-staff__grid"
+              id="contact-staff-admin"
+            ></div>
+
+          </section>
+
+          
+          <section
+            class="contact-staff__group"
+            data-role="ajudante"
+          >
+
+            <div class="contact-staff__group-header">
+
+              <span class="contact-staff__group-line"></span>
+
+              <h3 class="contact-staff__group-title">
+                Ajudantes
+              </h3>
+
+            </div>
+
+            <div
+              class="contact-staff__grid"
+              id="contact-staff-ajudante"
+            ></div>
+
+          </section>
+
+          
+          <section
+            class="contact-staff__group"
+            data-role="designer"
+          >
+
+            <div class="contact-staff__group-header">
+
+              <span class="contact-staff__group-line"></span>
+
+              <h3 class="contact-staff__group-title">
+                Designers
+              </h3>
+
+            </div>
+
+            <div
+              class="contact-staff__grid"
+              id="contact-staff-designer"
+            ></div>
+
+          </section>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section
+      class="contact-faq"
+      aria-labelledby="contact-faq-title"
+    >
+      <div class="container">
+
+        <div class="contact-section-title">
+
+          <span></span>
+
+          <h2 id="contact-faq-title">
+            Dúvidas
+            <strong>
+              frequentes
+            </strong>
+          </h2>
+
+          <span></span>
+
+        </div>
+
+        <div class="faq-list">
+
+          <article class="faq-item">
+
+            <button
+              class="faq-item__button"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Como faço para me inscrever em um diário?
+              </span>
+
+              <span
+                class="faq-item__icon"
+                aria-hidden="true"
+              >
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-item__answer">
+
+              <div class="faq-item__answer-inner">
+
+                <p>
+                  Acesse a página de Diários, escolha o modo e o horário
+                  desejado e clique em Participar para seguir para o nosso
+                  Discord.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-item__button"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Quais são as formas de pagamento?
+              </span>
+
+              <span
+                class="faq-item__icon"
+                aria-hidden="true"
+              >
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-item__answer">
+
+              <div class="faq-item__answer-inner">
+
+                <p>
+                  As inscrições são pagas via Pix pelo sistema de atendimento
+                  do Discord.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-item__button"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Como funciona o sistema de vagas?
+              </span>
+
+              <span
+                class="faq-item__icon"
+                aria-hidden="true"
+              >
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-item__answer">
+
+              <div class="faq-item__answer-inner">
+
+                <p>
+                  Cada horário possui um limite de jogadores. As vagas são
+                  atualizadas conforme as inscrições são confirmadas.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-item__button"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Quando minha vaga é confirmada?
+              </span>
+
+              <span
+                class="faq-item__icon"
+                aria-hidden="true"
+              >
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-item__answer">
+
+              <div class="faq-item__answer-inner">
+
+                <p>
+                  A vaga é contabilizada após a confirmação do pagamento da
+                  inscrição.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <article class="faq-item">
+
+            <button
+              class="faq-item__button"
+              type="button"
+              aria-expanded="false"
+            >
+
+              <span>
+                Ainda precisa de ajuda?
+              </span>
+
+              <span
+                class="faq-item__icon"
+                aria-hidden="true"
+              >
+                +
+              </span>
+
+            </button>
+
+            <div class="faq-item__answer">
+
+              <div class="faq-item__answer-inner">
+
+                <p>
+                  Entre no nosso Discord e fale diretamente com a equipe de
+                  suporte.
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <div id="contact-discord-component"></div>
+
+    <div id="discord-float-component"></div>
+
+  </main>
+
+  <div id="footer-component"></div>
+
+  <script src="./js/comp/botton.js"></script>
+  <script src="./js/main.js"></script>
+  <script src="./js/contato.js"></script>
+
+</body>
+
+</html>
