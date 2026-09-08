@@ -280,6 +280,7 @@ function historicoAtualizarStats() {
 
   historicoEls.totalPartidas.textContent = Number(totalPartidas || 0).toLocaleString("pt-BR");
 
+  /* Em API paginada, só exibimos totais globais quando a API enviar resumo. */
   historicoEls.totalParticipacoes.textContent =
     participacoesResumo !== null
       ? Number(participacoesResumo).toLocaleString("pt-BR")
@@ -651,6 +652,10 @@ async function historicoCarregarPagina() {
     const dados = await response.json();
     const lista = historicoOrdenar(historicoExtrairLista(dados));
 
+    /*
+     * Array puro = API antiga: o navegador ainda recebe tudo e pagina localmente.
+     * Objeto paginado = API nova: somente a página solicitada vem pela rede.
+     */
     if (Array.isArray(dados)) {
       historicoState.serverMode = false;
       historicoState.partidas = lista;

@@ -841,6 +841,7 @@
 }
 .stats-history{margin-top:2px;border:1px solid var(--color-border);border-radius:8px;background:#06090c;overflow:hidden}.stats-history__header{padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid var(--color-border)}.stats-history__header span{display:block;margin-bottom:3px;color:var(--color-primary);font-size:.48rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.stats-history__header h2{margin:0;color:#fff;font-size:.95rem;font-weight:850;text-transform:uppercase}.stats-history__header a{color:#ff3047;font-size:.56rem;font-weight:800;text-decoration:none;text-transform:uppercase}.stats-history__summary{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--color-border)}.stats-history__summary>div{padding:12px 16px;border-right:1px solid var(--color-border)}.stats-history__summary>div:last-child{border-right:0}.stats-history__summary strong{display:block;color:#fff;font-size:1.15rem;line-height:1}.stats-history__summary span{display:block;margin-top:5px;color:#71767d;font-size:.46rem;font-weight:800;text-transform:uppercase}.stats-history__loading,.stats-history__empty{padding:20px 16px;color:#747980;font-size:.65rem;text-align:center}.stats-history__list{display:grid}.stats-history-row{min-height:58px;padding:9px 16px;display:grid;grid-template-columns:105px 1fr 80px 72px;align-items:center;gap:12px;border-bottom:1px solid rgba(32,36,42,.72)}.stats-history-row:last-child{border-bottom:0}.stats-history-row__date strong,.stats-history-row__main strong{display:block;color:#fff;font-size:.67rem}.stats-history-row__date span,.stats-history-row__main span,.stats-history-row__result span{display:block;margin-top:3px;color:#727780;font-size:.52rem}.stats-history-row__result strong{color:#fff;font-size:.65rem}.stats-history-row__result--win strong{color:#44d986}.stats-history-row__kills{text-align:right;color:#fff;font-size:.65rem;font-weight:800}.stats-history-row__kills span{display:block;margin-top:2px;color:#727780;font-size:.48rem;font-weight:600}.stats-history__hint{margin:0;padding:9px 16px;border-top:1px solid var(--color-border);color:#5f646b;font-size:.5rem;line-height:1.45}@media(max-width:700px){.stats-history__header{align-items:flex-start;flex-direction:column;gap:8px}.stats-history-row{grid-template-columns:85px 1fr 60px}.stats-history-row__kills{display:none}}@media(max-width:480px){.stats-history__summary{grid-template-columns:1fr}.stats-history__summary>div{border-right:0;border-bottom:1px solid var(--color-border)}.stats-history__summary>div:last-child{border-bottom:0}.stats-history-row{grid-template-columns:72px 1fr 58px;padding:9px 11px;gap:8px}}
 
+/* Histórico pessoal v3 */
 .stats-history__summary{grid-template-columns:repeat(6,minmax(0,1fr))}
 .stats-history__summary>div:nth-child(3){border-right:1px solid var(--color-border)}
 .stats-history-row{grid-template-columns:105px minmax(160px,1fr) 92px 64px 22px;text-decoration:none;color:inherit;transition:background .16s ease}
@@ -851,6 +852,7 @@
 @media(max-width:700px){.stats-history-row{grid-template-columns:84px 1fr 72px 20px}.stats-history-row__kills{display:none}}
 @media(max-width:480px){.stats-history__summary{grid-template-columns:repeat(2,minmax(0,1fr))}.stats-history__summary>div{border-right:1px solid var(--color-border)!important;border-bottom:1px solid var(--color-border)!important}.stats-history__summary>div:nth-child(2n){border-right:0!important}.stats-history__summary>div:nth-last-child(-n+2){border-bottom:0!important}.stats-history-row{grid-template-columns:70px 1fr 62px 16px}}
 
+/* ===== Perfil v4: histórico visual ===== */
 .stats-profile__id{display:block;margin-top:7px;color:#5f6670;font-size:.58rem;font-weight:700;letter-spacing:.02em}
 .stats-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
 .stats-card--matches strong{color:#fff}
@@ -936,6 +938,7 @@
   .stats-recent-row__result{padding:4px 7px;font-size:.46rem}
 }
 
+/* ===== Histórico pessoal v5 ===== */
 .stats-history-v2 {
   margin-top: 6px;
   border: 1px solid var(--color-border);
@@ -1219,6 +1222,7 @@
   font-size: .62rem;
 }
 
+/* drawer no próprio perfil */
 body.stats-detail-open { overflow: hidden; }
 .stats-detail[hidden] { display: none; }
 .stats-detail {
@@ -1323,12 +1327,14 @@ body.stats-detail-open { overflow: hidden; }
   .stats-detail__panel { border-left:0; }
 }
 
+/* ajustes finais v5 */
 .stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .stats-recent-row { width: 100%; border-top: 0; border-left: 0; border-right: 0; font: inherit; text-align: left; }
 .stats-best__link { font: inherit; }
 @media (max-width: 850px) { .stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 560px) { .stats-grid { grid-template-columns: 1fr; } }
 
+/* ===== Histórico pessoal v6 — fiel ao mock de referência ===== */
 .stats-history-v2 {
   margin-top: 8px;
   border: 0;

@@ -472,6 +472,13 @@ function renderizarDiario(id) {
       ? String(id).toLowerCase()
       : "solo";
 
+  /*
+   * IMPORTANTE:
+   * limpa SEMPRE antes de renderizar.
+   * Assim o Duo nunca reaproveita
+   * os horários que estavam visíveis
+   * no Solo.
+   */
   if (
     diariosList
   ) {
@@ -525,6 +532,10 @@ function renderizarDiario(id) {
       );
   }
 
+  /*
+   * Cada modo usa SOMENTE
+   * diario.horarios do próprio objeto.
+   */
   const horarios =
     Array.isArray(
       diario.horarios
@@ -699,6 +710,10 @@ async function carregarDiarios() {
       );
     }
 
+    /*
+     * Mantém TODOS os dados da API.
+     * Não altera nem remove nada.
+     */
     diarios =
       listaDiarios;
 

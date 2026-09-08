@@ -365,6 +365,7 @@ async function renderizarStats(data) {
   }
 }
 
+
 function statsEscaparHTML(valor) {
   return String(valor ?? "")
     .replaceAll("&", "&amp;")
@@ -587,6 +588,7 @@ function statsEconomia(partida, jogador) {
     estimado = true;
   }
 
+  /* Compatibilidade com o histórico antigo até a API persistir a economia da partida. */
   if (liquido === null) {
     const legado = statsPrimeiroNumero([jogador], ["lucro"]);
     if (legado !== null) liquido = legado;
@@ -716,6 +718,7 @@ document.addEventListener("click", event => {
 document.addEventListener("keydown", event => {
   if (event.key === "Escape") statsFecharDetalhe();
 });
+
 
 function statsRenderizarPaginaHistorico() {
   const listHistory = document.querySelector("#stats-history-list");
