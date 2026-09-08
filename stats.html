@@ -157,6 +157,13 @@
                   @usuario
                 </span>
 
+                <span
+                  class="stats-profile__id"
+                  id="stats-user-id"
+                >
+                  ID: —
+                </span>
+
               </div>
 
             </div>
@@ -247,6 +254,19 @@
                   R$ 0,00
                 </strong>
 
+              </div>
+
+            </article>
+
+            <article class="stats-card stats-card--matches">
+
+              <div class="stats-card__icon">
+                <img src="./assets/icons/calendar.svg" alt="">
+              </div>
+
+              <div class="stats-card__content">
+                <span class="stats-card__label">Partidas</span>
+                <strong id="stats-partidas">—</strong>
               </div>
 
             </article>
@@ -344,6 +364,59 @@
 
           </section>
 
+          <section class="stats-history-v2" aria-labelledby="stats-history-title">
+
+            <div class="stats-history-v2__header">
+              <div>
+                <span>Seu histórico</span>
+                <h2 id="stats-history-title">Desempenho recente</h2>
+              </div>
+              <a href="./historico.html">Ver histórico geral →</a>
+            </div>
+
+            <div class="stats-history-v2__overview">
+
+              <article class="stats-best" id="stats-best-match">
+                <div class="stats-best__empty">Carregando melhor partida recente...</div>
+              </article>
+
+              <aside class="stats-performance">
+                <span class="stats-performance__eyebrow">Desempenho</span>
+                <h3>Resumo do jogador</h3>
+
+                <div class="stats-performance__list">
+                  <div><span>Partidas</span><strong id="stats-history-games">—</strong></div>
+                  <div><span>Vitórias</span><strong id="stats-history-wins">—</strong></div>
+                  <div><span>Kills</span><strong id="stats-history-kills">—</strong></div>
+                  <div><span>Média de kills</span><strong id="stats-history-kdavg">—</strong></div>
+                  <div><span>Winrate</span><strong id="stats-history-winrate">—</strong></div>
+                  <div><span>Lucro</span><strong id="stats-history-profit">—</strong></div>
+                </div>
+              </aside>
+
+            </div>
+
+            <div class="stats-recent">
+              <div class="stats-recent__head">
+                <div>
+                  <span>Últimas partidas</span>
+                  <h3>Partidas recentes</h3>
+                </div>
+              </div>
+
+              <div class="stats-history__loading" id="stats-history-loading">Carregando seu histórico...</div>
+              <div class="stats-history__empty" id="stats-history-empty" hidden>Nenhuma partida encontrada.</div>
+              <div class="stats-recent__list" id="stats-history-list"></div>
+
+              <div class="stats-history-pager" id="stats-history-pager" hidden>
+                <button type="button" id="stats-history-prev" aria-label="Página anterior">‹</button>
+                <div class="stats-history-pager__pages" id="stats-history-pages"></div>
+                <button type="button" id="stats-history-next" aria-label="Próxima página">›</button>
+              </div>
+            </div>
+
+          </section>
+
           <div class="stats-note">
 
             <span class="stats-note__line"></span>
@@ -367,6 +440,18 @@
   </main>
 
   <div id="footer-component"></div>
+
+    <div class="stats-detail" id="stats-detail" hidden>
+      <button class="stats-detail__backdrop" type="button" data-stats-detail-close aria-label="Fechar detalhes"></button>
+
+      <aside class="stats-detail__panel" role="dialog" aria-modal="true" aria-labelledby="stats-detail-title">
+        <div class="stats-detail__top">
+          <button class="stats-detail__back" type="button" data-stats-detail-close>← Voltar ao perfil</button>
+          <button class="stats-detail__close" type="button" data-stats-detail-close aria-label="Fechar">×</button>
+        </div>
+        <div id="stats-detail-content"></div>
+      </aside>
+    </div>
 
   <script src="./js/comp/botton.js"></script>
   <script src="./js/main.js"></script>

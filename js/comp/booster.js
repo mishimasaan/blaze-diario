@@ -51,8 +51,6 @@ function iniciarLoopBoosters(track) {
 
   if (!itensOriginais.length) return;
 
-  
-
   itensOriginais.forEach(item => {
     const clone = item.cloneNode(true);
 
@@ -65,8 +63,6 @@ function iniciarLoopBoosters(track) {
   });
 
   let posicao = 0;
-
-  
 
   const velocidade = 0.025;
 
@@ -103,13 +99,9 @@ function iniciarLoopBoosters(track) {
     ultimoTempo =
       tempoAtual;
 
-    
-
     posicao +=
       velocidade *
       delta;
-
-    
 
     if (
       posicao >= larguraOriginal

@@ -1,4 +1,4 @@
-const API_BASE = "https://api.noturnos.xyz";
+const API_BASE = 'https://api.noturnos.xyz';
 
 const DIARIOS_API = `${API_BASE}/api/diarios`;
 
@@ -8,30 +8,30 @@ const MODOS_VALIDOS = [
 ];
 
 const diariosList = document.querySelector(
-    "#diarios-list"
-  );
+  "#diarios-list"
+);
 
 const diariosStatus = document.querySelector(
-    "#diarios-status"
-  );
+  "#diarios-status"
+);
 
 const diarioName = document.querySelector(
-    "#diario-name"
-  );
+  "#diario-name"
+);
 
 const diarioPrice = document.querySelector(
-    "#diario-price"
-  );
+  "#diario-price"
+);
 
 const diarioTabsContainer = document.querySelector(
-    ".diarios-tabs"
-  );
+  ".diarios-tabs"
+);
 
 const diarioTabs = Array.from(
-    document.querySelectorAll(
-      ".diarios-tab"
-    )
-  );
+  document.querySelectorAll(
+    ".diarios-tab"
+  )
+);
 
 let diarios = [];
 
@@ -39,9 +39,9 @@ let diarioAtual = obterModoPeloHash();
 
 function obterModoPeloHash() {
   const hash = window.location.hash
-      .replace("#", "")
-      .trim()
-      .toLowerCase();
+    .replace("#", "")
+    .trim()
+    .toLowerCase();
 
   if (
     MODOS_VALIDOS.includes(
@@ -55,16 +55,25 @@ function obterModoPeloHash() {
 }
 
 function formatarDinheiro(valor) {
-  return Number(
-    valor || 0
-  ).toLocaleString(
+  if (
+    valor === null ||
+    valor === undefined ||
+    valor === ""
+  ) {
+    return "Indisponível";
+  }
+
+  const numero = Number(valor);
+
+  if (!Number.isFinite(numero)) {
+    return "Indisponível";
+  }
+
+  return numero.toLocaleString(
     "pt-BR",
     {
-      style:
-        "currency",
-
-      currency:
-        "BRL"
+      style: "currency",
+      currency: "BRL"
     }
   );
 }
@@ -104,7 +113,8 @@ function encontrarDiario(id) {
     diario =>
       String(
         diario.id
-      ).toLowerCase() === id
+      ).toLowerCase() ===
+      String(id).toLowerCase()
   );
 }
 
@@ -131,24 +141,24 @@ function normalizarHorario(horario) {
 
 function obterStatus(horario) {
   const lotado = Boolean(
-      horario?.lotado
-    ) ||
+    horario?.lotado
+  ) ||
 
-    horario?.status ===
-      "lotado" ||
+  horario?.status ===
+  "lotado" ||
 
-    (
-      Number(
-        horario?.limite
-      ) > 0 &&
+  (
+    Number(
+      horario?.limite
+    ) > 0 &&
 
-      Number(
-        horario?.ocupados
-      ) >=
-        Number(
-          horario?.limite
-        )
-    );
+    Number(
+      horario?.ocupados
+    ) >=
+    Number(
+      horario?.limite
+    )
+  );
 
   if (
     lotado
@@ -176,49 +186,58 @@ function criarCard(
   horario
 ) {
   const status = obterStatus(
+    horario
+  );
+
+  const lotado =
+    status.classe === "lotado";
+
+  const horarioValor =
+    normalizarHorario(
       horario
     );
 
-  const lotado = status.classe ===
-      "lotado";
-
-  const horarioValor = normalizarHorario(
-      horario
-    );
-
-  const horarioSeguro = escaparHTML(
+  const horarioSeguro =
+    escaparHTML(
       horarioValor
     );
 
-  const modoSeguro = escaparHTML(
+  const modoSeguro =
+    escaparHTML(
       diario.nome ||
       diario.id
     );
 
-  const statusClasse = escaparHTML(
+  const statusClasse =
+    escaparHTML(
       status.classe
     );
 
-  const statusTexto = escaparHTML(
+  const statusTexto =
+    escaparHTML(
       status.texto
     );
 
-  const ocupados = Number(
+  const ocupados =
+    Number(
       horario?.ocupados
     ) || 0;
 
-  const limite = Number(
+  const limite =
+    Number(
       horario?.limite
     ) || 0;
 
-  const vagas = Math.max(
+  const vagas =
+    Math.max(
       Number(
         horario?.vagas
       ) || 0,
       0
     );
 
-  const porcentagem = Math.min(
+  const porcentagem =
+    Math.min(
       Math.max(
         Number(
           horario?.porcentagem
@@ -349,7 +368,8 @@ function atualizarIndicador(id) {
     return;
   }
 
-  const index = diarioTabs.findIndex(
+  const index =
+    diarioTabs.findIndex(
       tab =>
         tab.dataset.diario === id
     );
@@ -371,7 +391,8 @@ function atualizarIndicador(id) {
 function atualizarTabs(id) {
   diarioTabs.forEach(
     tab => {
-      const ativo = tab.dataset.diario === id;
+      const ativo =
+        tab.dataset.diario === id;
 
       tab.classList.toggle(
         "is-active",
@@ -420,7 +441,7 @@ function mostrarIndisponivel(id) {
     diarioPrice
   ) {
     diarioPrice.textContent =
-      "—";
+      "Indisponível";
   }
 
   if (
@@ -437,20 +458,47 @@ function mostrarIndisponivel(id) {
       false;
 
     diariosStatus.textContent =
-      "Nenhum diário disponível no momento.";
+      id === "duo"
+        ? "Diário Duo indisponível no momento."
+        : "Diário Solo indisponível no momento.";
   }
 }
 
 function renderizarDiario(id) {
-  const diario = encontrarDiario(
-      id
+  const modo =
+    MODOS_VALIDOS.includes(
+      String(id).toLowerCase()
+    )
+      ? String(id).toLowerCase()
+      : "solo";
+
+  if (
+    diariosList
+  ) {
+    diariosList.innerHTML =
+      "";
+  }
+
+  if (
+    diariosStatus
+  ) {
+    diariosStatus.hidden =
+      true;
+
+    diariosStatus.textContent =
+      "";
+  }
+
+  const diario =
+    encontrarDiario(
+      modo
     );
 
   if (
     !diario
   ) {
     mostrarIndisponivel(
-      id
+      modo
     );
 
     return;
@@ -461,7 +509,11 @@ function renderizarDiario(id) {
   ) {
     diarioName.textContent =
       diario.nome ||
-      diario.id;
+      (
+        modo === "duo"
+          ? "Diário Duo"
+          : "Diário Solo"
+      );
   }
 
   if (
@@ -473,21 +525,16 @@ function renderizarDiario(id) {
       );
   }
 
-  if (
-    !Array.isArray(
+  const horarios =
+    Array.isArray(
       diario.horarios
-    ) ||
+    )
+      ? diario.horarios
+      : [];
 
-    diario.horarios.length ===
-      0
+  if (
+    horarios.length === 0
   ) {
-    if (
-      diariosList
-    ) {
-      diariosList.innerHTML =
-        "";
-    }
-
     if (
       diariosStatus
     ) {
@@ -495,7 +542,9 @@ function renderizarDiario(id) {
         false;
 
       diariosStatus.textContent =
-        "Nenhum diário disponível no momento.";
+        modo === "duo"
+          ? "Diário Duo indisponível no momento."
+          : "Nenhum horário disponível no momento.";
     }
 
     return;
@@ -512,7 +561,7 @@ function renderizarDiario(id) {
     diariosList
   ) {
     diariosList.innerHTML =
-      diario.horarios
+      horarios
         .map(
           horario =>
             criarCard(
@@ -525,11 +574,12 @@ function renderizarDiario(id) {
 }
 
 function atualizarHash(id) {
-  const novoHash = `#${id}`;
+  const novoHash =
+    `#${id}`;
 
   if (
     window.location.hash ===
-      novoHash
+    novoHash
   ) {
     return;
   }
@@ -548,10 +598,18 @@ function selecionarDiario(
   id,
   alterarURL = true
 ) {
-  const modo = MODOS_VALIDOS.includes(
-      id
+  const idNormalizado =
+    String(
+      id || ""
     )
-      ? id
+      .trim()
+      .toLowerCase();
+
+  const modo =
+    MODOS_VALIDOS.includes(
+      idNormalizado
+    )
+      ? idNormalizado
       : "solo";
 
   diarioAtual =
@@ -586,7 +644,8 @@ async function carregarDiarios() {
         "Carregando horários...";
     }
 
-    const response = await fetch(
+    const response =
+      await fetch(
         DIARIOS_API,
         {
           method:
@@ -610,17 +669,38 @@ async function carregarDiarios() {
       );
     }
 
-    const dados = await response.json();
+    const dados =
+      await response.json();
 
-    const listaDiarios = Array.isArray(dados)
-      ? dados
-      : Object.entries(dados || {}).map(([id, diario]) => ({ id, ...diario }));
+    const listaDiarios =
+      Array.isArray(
+        dados
+      )
+        ? dados
+        : Object.entries(
+            dados || {}
+          ).map(
+            (
+              [
+                id,
+                diario
+              ]
+            ) => ({
+              id,
+              ...diario
+            })
+          );
 
-    if (!listaDiarios.length) {
-      throw new Error("Resposta inválida da API.");
+    if (
+      !listaDiarios.length
+    ) {
+      throw new Error(
+        "Resposta inválida da API."
+      );
     }
 
-    diarios = listaDiarios;
+    diarios =
+      listaDiarios;
 
     selecionarDiario(
       diarioAtual,
@@ -677,7 +757,8 @@ diarioTabs.forEach(
 window.addEventListener(
   "hashchange",
   () => {
-    const modo = obterModoPeloHash();
+    const modo =
+      obterModoPeloHash();
 
     if (
       modo !== diarioAtual
@@ -693,7 +774,8 @@ window.addEventListener(
 window.addEventListener(
   "popstate",
   () => {
-    const modo = obterModoPeloHash();
+    const modo =
+      obterModoPeloHash();
 
     selecionarDiario(
       modo,
@@ -708,44 +790,79 @@ atualizarTabs(
 
 carregarDiarios();
 
-const CHECKOUT_API = `${API_BASE}/api`;
-const DISCORD_URL = "https://discord.gg/m8KpCNTN5m";
-const checkoutModal = document.querySelector("#checkout-modal");
-const checkoutContent = document.querySelector("#checkout-content");
+const CHECKOUT_API =
+  `${API_BASE}/api`;
+
+const DISCORD_URL =
+  "https://discord.gg/m8KpCNTN5m";
+
+const checkoutModal =
+  document.querySelector(
+    "#checkout-modal"
+  );
+
+const checkoutContent =
+  document.querySelector(
+    "#checkout-content"
+  );
 
 let checkoutTimer = null;
+
 let discordUser = null;
 
 function fecharCheckout() {
-  if (checkoutTimer) {
-    clearInterval(checkoutTimer);
+  if (
+    checkoutTimer
+  ) {
+    clearInterval(
+      checkoutTimer
+    );
   }
 
-  checkoutTimer = null;
-  checkoutModal.hidden = true;
-  document.body.classList.remove("checkout-open");
+  checkoutTimer =
+    null;
+
+  checkoutModal.hidden =
+    true;
+
+  document.body.classList.remove(
+    "checkout-open"
+  );
 }
 
 async function obterDiscordConectado() {
   try {
-    const response = await fetch(
-      `${CHECKOUT_API}/me`,
-      {
-        method: "GET",
-        headers: {
-          Accept: "application/json"
-        },
-        credentials: "include",
-        cache: "no-store"
-      }
-    );
+    const response =
+      await fetch(
+        `${CHECKOUT_API}/me`,
+        {
+          method:
+            "GET",
 
-    if (!response.ok) {
-      discordUser = null;
+          headers: {
+            Accept:
+              "application/json"
+          },
+
+          credentials:
+            "include",
+
+          cache:
+            "no-store"
+        }
+      );
+
+    if (
+      !response.ok
+    ) {
+      discordUser =
+        null;
+
       return null;
     }
 
-    const data = await response.json();
+    const data =
+      await response.json();
 
     discordUser =
       data.user ||
@@ -756,12 +873,18 @@ async function obterDiscordConectado() {
       !discordUser ||
       !discordUser.id
     ) {
-      discordUser = null;
+      discordUser =
+        null;
     }
 
     return discordUser;
-  } catch (error) {
-    discordUser = null;
+
+  } catch (
+    error
+  ) {
+    discordUser =
+      null;
+
     return null;
   }
 }
@@ -775,11 +898,20 @@ function avatarDiscord(user) {
     return "";
   }
 
-  const extensao = String(user.avatar).startsWith("a_")
+  const extensao =
+    String(
+      user.avatar
+    ).startsWith(
+      "a_"
+    )
       ? "gif"
       : "png";
 
-  return `https://cdn.discordapp.com/avatars/${encodeURIComponent(user.id)}/${encodeURIComponent(user.avatar)}.${extensao}?size=128`;
+  return `https://cdn.discordapp.com/avatars/${encodeURIComponent(
+    user.id
+  )}/${encodeURIComponent(
+    user.avatar
+  )}.${extensao}?size=128`;
 }
 
 function nomeDiscord(user) {
@@ -795,7 +927,9 @@ function nomeDiscord(user) {
 function usuarioDiscord(user) {
   return (
     user?.username ||
-    nomeDiscord(user)
+    nomeDiscord(
+      user
+    )
   );
 }
 
@@ -816,7 +950,9 @@ function salvarCheckoutPendente(
           )
       })
     );
-  } catch (error) {}
+  } catch (
+    error
+  ) {}
 }
 
 function conectarDiscord(
@@ -836,14 +972,19 @@ function resumoCheckout(
   diario,
   horario
 ) {
-  const horarioValor = normalizarHorario(
+  const horarioValor =
+    normalizarHorario(
       horario
     );
 
   return `
     <div class="checkout__summary">
+
       <div>
-        <span>Modo</span>
+        <span>
+          Modo
+        </span>
+
         <strong>
           ${escaparHTML(
             diario.nome ||
@@ -853,7 +994,10 @@ function resumoCheckout(
       </div>
 
       <div>
-        <span>Horário</span>
+        <span>
+          Horário
+        </span>
+
         <strong>
           ${escaparHTML(
             horarioValor
@@ -862,61 +1006,88 @@ function resumoCheckout(
       </div>
 
       <div>
-        <span>Valor</span>
+        <span>
+          Valor
+        </span>
+
         <strong>
           ${formatarDinheiro(
             diario.preco
           )}
         </strong>
       </div>
+
     </div>
   `;
 }
 
-function blocoDiscordConectado(user) {
-  const avatar = avatarDiscord(
+function blocoDiscordConectado(
+  user
+) {
+  const avatar =
+    avatarDiscord(
       user
     );
 
   return `
-    <div class="checkout-discord checkout-discord--connected">
+    <div
+      class="
+        checkout-discord
+        checkout-discord--connected
+      "
+    >
+
       ${
         avatar
           ? `
             <img
               class="checkout-discord__avatar"
-              src="${escaparHTML(avatar)}"
+              src="${escaparHTML(
+                avatar
+              )}"
               alt=""
             >
           `
           : `
-            <div class="checkout-discord__avatar checkout-discord__avatar--fallback">
+            <div
+              class="
+                checkout-discord__avatar
+                checkout-discord__avatar--fallback
+              "
+            >
               D
             </div>
           `
       }
 
       <div class="checkout-discord__info">
+
         <span class="checkout-discord__label">
           Discord conectado
         </span>
 
         <strong class="checkout-discord__name">
           ${escaparHTML(
-            nomeDiscord(user)
+            nomeDiscord(
+              user
+            )
           )}
         </strong>
 
         <span class="checkout-discord__username">
           @${escaparHTML(
-            usuarioDiscord(user)
+            usuarioDiscord(
+              user
+            )
           )}
         </span>
+
       </div>
 
       <span class="checkout-discord__status">
         ✓
       </span>
+
     </div>
   `;
 }
@@ -926,6 +1097,7 @@ function mostrarConectarDiscord(
   horario
 ) {
   checkoutContent.innerHTML = `
+
     <span class="checkout__eyebrow">
       Checkout
     </span>
@@ -947,14 +1119,18 @@ function mostrarConectarDiscord(
     )}
 
     <div class="checkout-discord">
+
       <div class="checkout-discord__icon">
+
         <img
           src="./assets/icons/discord.svg"
           alt=""
         >
+
       </div>
 
       <div class="checkout-discord__info">
+
         <strong class="checkout-discord__name">
           Entrar com Discord
         </strong>
@@ -962,11 +1138,16 @@ function mostrarConectarDiscord(
         <span class="checkout-discord__username">
           Você será redirecionado para autorizar sua conta.
         </span>
+
       </div>
+
     </div>
 
     <button
-      class="checkout__button checkout__button--primary"
+      class="
+        checkout__button
+        checkout__button--primary
+      "
       type="button"
       id="checkout-connect-discord"
     >
@@ -974,7 +1155,11 @@ function mostrarConectarDiscord(
     </button>
 
     <button
-      class="checkout__button checkout__button--secondary checkout__button--spaced"
+      class="
+        checkout__button
+        checkout__button--secondary
+        checkout__button--spaced
+      "
       type="button"
       data-checkout-back
     >
@@ -1016,6 +1201,7 @@ async function iniciarCheckoutSite(
   horario
 ) {
   checkoutContent.innerHTML = `
+
     <span class="checkout__eyebrow">
       Checkout
     </span>
@@ -1037,9 +1223,12 @@ async function iniciarCheckoutSite(
     )}
   `;
 
-  const user = await obterDiscordConectado();
+  const user =
+    await obterDiscordConectado();
 
-  if (!user) {
+  if (
+    !user
+  ) {
     mostrarConectarDiscord(
       diario,
       horario
@@ -1059,11 +1248,13 @@ function abrirCheckout(
   diarioId,
   horario
 ) {
-  const diario = encontrarDiario(
+  const diario =
+    encontrarDiario(
       diarioId
     );
 
-  const horarioValor = normalizarHorario(
+  const horarioValor =
+    normalizarHorario(
       horario
     );
 
@@ -1082,6 +1273,7 @@ function abrirCheckout(
   );
 
   checkoutContent.innerHTML = `
+
     <span class="checkout__eyebrow">
       Participar
     </span>
@@ -1103,8 +1295,12 @@ function abrirCheckout(
     )}
 
     <div class="checkout__choices">
+
       <button
-        class="checkout__button checkout__button--primary"
+        class="
+          checkout__button
+          checkout__button--primary
+        "
         type="button"
         id="checkout-site"
       >
@@ -1112,13 +1308,17 @@ function abrirCheckout(
       </button>
 
       <a
-        class="checkout__button checkout__button--secondary"
+        class="
+          checkout__button
+          checkout__button--secondary
+        "
         href="${DISCORD_URL}"
         target="_blank"
         rel="noopener noreferrer"
       >
         Comprar pelo Discord
       </a>
+
     </div>
   `;
 
@@ -1142,11 +1342,14 @@ function formularioCheckout(
   horario,
   user = discordUser
 ) {
-  const qtd = Math.max(
+  const qtd =
+    Math.max(
       1,
+
       Number(
         diario.quantidadeNicks
       ) ||
+
       (
         diario.id === "duo"
           ? 2
@@ -1155,6 +1358,7 @@ function formularioCheckout(
     );
 
   checkoutContent.innerHTML = `
+
     <span class="checkout__eyebrow">
       Checkout
     </span>
@@ -1184,35 +1388,40 @@ function formularioCheckout(
     }
 
     <form id="checkout-form">
-      ${Array.from(
-        {
-          length:
-            qtd
-        },
-        (
-          _,
-          i
-        ) => `
-          <div class="checkout__field">
-            <label for="nick-${i}">
-              Nick ${
-                qtd > 1
-                  ? i + 1
-                  : ""
-              }
-            </label>
 
-            <input
-              id="nick-${i}"
-              name="nick"
-              maxlength="32"
-              autocomplete="off"
-              required
-              placeholder="Seu nick no jogo"
-            >
-          </div>
-        `
-      ).join("")}
+      ${
+        Array.from(
+          {
+            length:
+              qtd
+          },
+          (
+            _,
+            i
+          ) => `
+            <div class="checkout__field">
+
+              <label for="nick-${i}">
+                Nick ${
+                  qtd > 1
+                    ? i + 1
+                    : ""
+                }
+              </label>
+
+              <input
+                id="nick-${i}"
+                name="nick"
+                maxlength="32"
+                autocomplete="off"
+                required
+                placeholder="Seu nick no jogo"
+              >
+
+            </div>
+          `
+        ).join("")
+      }
 
       <div
         class="checkout__error"
@@ -1221,12 +1430,16 @@ function formularioCheckout(
       ></div>
 
       <button
-        class="checkout__button checkout__button--primary"
+        class="
+          checkout__button
+          checkout__button--primary
+        "
         id="checkout-submit"
         type="submit"
       >
         Gerar PIX
       </button>
+
     </form>
   `;
 
@@ -1253,26 +1466,28 @@ async function criarPagamento(
 ) {
   event.preventDefault();
 
-  const btn = document.querySelector(
+  const btn =
+    document.querySelector(
       "#checkout-submit"
     );
 
-  const erro = document.querySelector(
+  const erro =
+    document.querySelector(
       "#checkout-error"
     );
 
   const nicks = [
-      ...event.currentTarget.querySelectorAll(
-        'input[name="nick"]'
-      )
-    ]
-      .map(
-        input =>
-          input.value.trim()
-      )
-      .filter(
-        Boolean
-      );
+    ...event.currentTarget.querySelectorAll(
+      'input[name="nick"]'
+    )
+  ]
+    .map(
+      input =>
+        input.value.trim()
+    )
+    .filter(
+      Boolean
+    );
 
   btn.disabled =
     true;
@@ -1284,7 +1499,8 @@ async function criarPagamento(
     true;
 
   try {
-    const response = await fetch(
+    const response =
+      await fetch(
         `${CHECKOUT_API}/payment/create`,
         {
           method:
@@ -1316,7 +1532,8 @@ async function criarPagamento(
         }
       );
 
-    const data = await response
+    const data =
+      await response
         .json()
         .catch(
           () => ({})
@@ -1337,7 +1554,9 @@ async function criarPagamento(
       return;
     }
 
-    if (!response.ok) {
+    if (
+      !response.ok
+    ) {
       throw new Error(
         data.erro ||
         "Não foi possível gerar o PIX."
@@ -1351,7 +1570,10 @@ async function criarPagamento(
     );
 
     carregarDiarios();
-  } catch (error) {
+
+  } catch (
+    error
+  ) {
     erro.textContent =
       error.message;
 
@@ -1371,7 +1593,8 @@ function mostrarPix(
   horario,
   data
 ) {
-  const qr = data.qrCodeBase64
+  const qr =
+    data.qrCodeBase64
       ? (
           data.qrCodeBase64.startsWith(
             "data:"
@@ -1382,7 +1605,9 @@ function mostrarPix(
       : "";
 
   checkoutContent.innerHTML = `
+
     <div class="checkout__pix">
+
       <span class="checkout__eyebrow">
         Pagamento PIX
       </span>
@@ -1429,7 +1654,10 @@ function mostrarPix(
       )}</textarea>
 
       <button
-        class="checkout__button checkout__button--primary"
+        class="
+          checkout__button
+          checkout__button--primary
+        "
         id="copy-pix"
         type="button"
       >
@@ -1442,6 +1670,7 @@ function mostrarPix(
       >
         Aguardando confirmação do Mercado Pago. Sua vaga será adicionada após o pagamento ser aprovado.
       </p>
+
     </div>
   `;
 
@@ -1452,10 +1681,12 @@ function mostrarPix(
     .addEventListener(
       "click",
       async event => {
-        await navigator.clipboard.writeText(
-          data.codigoPix ||
-          ""
-        );
+        await navigator
+          .clipboard
+          .writeText(
+            data.codigoPix ||
+            ""
+          );
 
         event.currentTarget.textContent =
           "PIX copiado!";
@@ -1487,8 +1718,11 @@ async function consultarPagamento(
   horario
 ) {
   try {
-    const response = await fetch(
-        `${CHECKOUT_API}/payment/${encodeURIComponent(paymentId)}`,
+    const response =
+      await fetch(
+        `${CHECKOUT_API}/payment/${encodeURIComponent(
+          paymentId
+        )}`,
         {
           credentials:
             "include",
@@ -1498,13 +1732,16 @@ async function consultarPagamento(
         }
       );
 
-    const data = await response.json();
+    const data =
+      await response.json();
 
     if (
       data.excedente ||
       data.necessitaEstorno
     ) {
-      if (checkoutTimer) {
+      if (
+        checkoutTimer
+      ) {
         clearInterval(
           checkoutTimer
         );
@@ -1514,7 +1751,9 @@ async function consultarPagamento(
         null;
 
       checkoutContent.innerHTML = `
+
         <div class="checkout__success">
+
           <span class="checkout__eyebrow">
             Pagamento recebido
           </span>
@@ -1528,13 +1767,17 @@ async function consultarPagamento(
           </p>
 
           <a
-            class="checkout__button checkout__button--primary"
+            class="
+              checkout__button
+              checkout__button--primary
+            "
             href="${DISCORD_URL}"
             target="_blank"
             rel="noopener noreferrer"
           >
             Abrir Discord
           </a>
+
         </div>
       `;
 
@@ -1543,8 +1786,12 @@ async function consultarPagamento(
       return;
     }
 
-    if (data.liberado) {
-      if (checkoutTimer) {
+    if (
+      data.liberado
+    ) {
+      if (
+        checkoutTimer
+      ) {
         clearInterval(
           checkoutTimer
         );
@@ -1553,12 +1800,15 @@ async function consultarPagamento(
       checkoutTimer =
         null;
 
-      const nicksConfirmados = data.slot?.nicks ||
+      const nicksConfirmados =
+        data.slot?.nicks ||
         data.nicks ||
         [];
 
       checkoutContent.innerHTML = `
+
         <div class="checkout__success">
+
           <div class="checkout__success-mark">
             ✓
           </div>
@@ -1575,6 +1825,7 @@ async function consultarPagamento(
           </h2>
 
           <p class="checkout__text">
+
             ${escaparHTML(
               nicksConfirmados.join(
                 ", "
@@ -1587,31 +1838,42 @@ async function consultarPagamento(
               diario.nome ||
               diario.id
             )}
+
             •
+
             ${escaparHTML(
               normalizarHorario(
                 horario
               )
             )}
+
           </p>
 
           <button
-            class="checkout__button checkout__button--primary"
+            class="
+              checkout__button
+              checkout__button--primary
+            "
             type="button"
             data-checkout-close
           >
             Concluir
           </button>
+
         </div>
       `;
 
       carregarDiarios();
     }
-  } catch (error) {}
+
+  } catch (
+    error
+  ) {}
 }
 
 async function reabrirCheckoutPendente() {
-  let pendente = null;
+  let pendente =
+    null;
 
   try {
     pendente =
@@ -1621,7 +1883,10 @@ async function reabrirCheckoutPendente() {
         ) ||
         "null"
       );
-  } catch (error) {}
+
+  } catch (
+    error
+  ) {}
 
   if (
     !pendente?.diarioId ||
@@ -1634,12 +1899,16 @@ async function reabrirCheckoutPendente() {
     "blazeCheckoutPendente"
   );
 
-  const tentarAbrir = () => {
-      const diario = encontrarDiario(
+  const tentarAbrir =
+    () => {
+      const diario =
+        encontrarDiario(
           pendente.diarioId
         );
 
-      if (!diario) {
+      if (
+        !diario
+      ) {
         return false;
       }
 
@@ -1656,13 +1925,17 @@ async function reabrirCheckoutPendente() {
       return true;
     };
 
-  if (tentarAbrir()) {
+  if (
+    tentarAbrir()
+  ) {
     return;
   }
 
-  let tentativas = 0;
+  let tentativas =
+    0;
 
-  const timer = setInterval(
+  const timer =
+    setInterval(
       () => {
         tentativas +=
           1;
@@ -1683,19 +1956,25 @@ async function reabrirCheckoutPendente() {
 document.addEventListener(
   "click",
   event => {
-    const participar = event.target.closest(
+    const participar =
+      event.target.closest(
         ".js-participar"
       );
 
-    if (participar) {
-      const card = participar.closest(
+    if (
+      participar
+    ) {
+      const card =
+        participar.closest(
           ".diario-card"
         );
 
-      const diarioId = participar.dataset.diario ||
+      const diarioId =
+        participar.dataset.diario ||
         diarioAtual;
 
-      const horario = normalizarHorario(
+      const horario =
+        normalizarHorario(
           participar.dataset.horario ||
           card?.dataset.horario ||
           card
