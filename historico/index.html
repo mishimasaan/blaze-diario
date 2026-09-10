@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Histórico Blaze Diários — partidas finalizadas, participantes e destaques."
+  >
+
+  <title>Histórico — Blaze Diários</title>
+
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/components/navbar.css">
+  <link rel="stylesheet" href="/css/components/button-animation.css">
+  <link rel="stylesheet" href="/css/components/discord.css">
+  <link rel="stylesheet" href="/css/components/footer.css">
+  <link rel="stylesheet" href="/css/historico.css">
+</head>
+
+<body>
+  <div id="navbar-component"></div>
+
+  <main class="historico">
+
+    <section class="historico-hero">
+      <div class="container historico-hero__content">
+
+        <div class="historico-hero__copy">
+
+
+
+          <h1 class="historico-hero__title">
+            Histórico <strong>de partidas</strong>
+          </h1>
+
+          <p class="historico-hero__description">
+            Partidas finalizadas, horários, participantes,
+            vencedores e destaques registrados.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="historico-board">
+      <div class="container">
+
+        <div class="historico-toolbar">
+
+          <div class="historico-field">
+            <label for="historico-filtro-modo">
+              Modo
+            </label>
+
+            <select id="historico-filtro-modo">
+              <option value="todos">
+                Todos
+              </option>
+
+              <option value="solo">
+                Solo
+              </option>
+
+              <option value="duo">
+                Duo
+              </option>
+            </select>
+          </div>
+
+          <div
+            class="
+              historico-field
+              historico-field--search
+            "
+          >
+            <label for="historico-busca">
+              Jogador
+            </label>
+
+            <input
+              id="historico-busca"
+              type="search"
+              autocomplete="off"
+              placeholder="Buscar nick, nome ou usuário"
+            >
+          </div>
+
+          <button
+            class="historico-clear"
+            id="historico-limpar"
+            type="button"
+          >
+            Limpar
+          </button>
+
+        </div>
+
+        <section class="historico-list-section">
+
+          <div class="historico-list-header">
+
+            <div>
+
+              <span class="historico-list-header__eyebrow">
+                Partidas
+              </span>
+
+              <h2>
+                Partidas recentes
+              </h2>
+
+            </div>
+
+            <span
+              class="historico-list-header__count"
+              id="historico-contagem"
+            >
+              Carregando...
+            </span>
+
+          </div>
+
+          <div
+            class="historico-loading"
+            id="historico-loading"
+          >
+            Carregando histórico...
+          </div>
+
+          <div
+            class="historico-empty"
+            id="historico-empty"
+            hidden
+          >
+            Nenhuma partida encontrada.
+          </div>
+
+          <div
+            class="historico-table-wrap"
+            id="historico-table-wrap"
+            hidden
+          >
+
+            <table class="historico-table">
+
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Data</th>
+                  <th>Hora</th>
+                  <th>Modo</th>
+                  <th>Mapa</th>
+                  <th>Jogadores</th>
+                  <th>Vencedor</th>
+                  <th></th>
+                </tr>
+              </thead>
+
+              <tbody id="historico-tbody"></tbody>
+
+            </table>
+
+          </div>
+
+          <div
+            class="historico-cards"
+            id="historico-cards"
+            hidden
+          ></div>
+
+          <nav
+            class="historico-pagination"
+            id="historico-pagination"
+            aria-label="Paginação do histórico"
+            hidden
+          >
+
+            <button
+              type="button"
+              id="historico-prev"
+            >
+              Anterior
+            </button>
+
+            <span id="historico-page-info">
+              Página 1
+            </span>
+
+            <button
+              type="button"
+              id="historico-next"
+            >
+              Próxima
+            </button>
+
+          </nav>
+
+        </section>
+
+      </div>
+    </section>
+
+    <div id="discord-float-component"></div>
+
+  </main>
+
+  <div
+    class="historico-modal"
+    id="historico-modal"
+    hidden
+  >
+
+    <div
+      class="historico-modal__backdrop"
+      data-historico-close
+    ></div>
+
+    <aside
+      class="historico-modal__panel"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="historico-detalhes-titulo"
+    >
+
+      <div class="historico-modal__top">
+
+        <button
+          class="historico-modal__back"
+          type="button"
+          data-historico-close
+        >
+          Voltar ao histórico
+        </button>
+
+        <button
+          class="historico-modal__close"
+          type="button"
+          data-historico-close
+          aria-label="Fechar"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div id="historico-detalhes"></div>
+
+    </aside>
+
+  </div>
+
+  <div id="footer-component"></div>
+
+  <script src="/js/comp/botton.js"></script>
+  <script src="/js/main.js"></script>
+  <script src="/js/historico.js"></script>
+
+</body>
+</html>
