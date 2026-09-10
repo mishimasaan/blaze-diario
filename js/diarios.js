@@ -1,4 +1,4 @@
-const API_BASE = 'https://api.blazediarios.com';
+const API_BASE = 'https://api.noturnos.xyz';
 
 const DIARIOS_API = `${API_BASE}/api/diarios`;
 

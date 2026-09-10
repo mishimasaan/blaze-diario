@@ -378,3 +378,44 @@
     border-bottom: 1px solid var(--color-border);
   }
 }
+/* Raposa do banner: exibida somente em desktop com ponteiro preciso (mouse/trackpad). */
+@media (min-width: 901px) and (hover: hover) and (pointer: fine) {
+  .hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(
+        90deg,
+        rgba(3, 6, 8, 1) 0%,
+        rgba(3, 6, 8, 0.96) 30%,
+        rgba(3, 6, 8, 0.56) 53%,
+        rgba(3, 6, 8, 0.08) 74%,
+        rgba(3, 6, 8, 0) 100%
+      ),
+      url("../assets/images/hero-fox-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center, right center;
+    background-size: 100% 100%, cover;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* A arte já faz o papel da área visual; evita qualquer elemento duplicado. */
+  .hero__visual::before {
+    display: none;
+  }
+}
+
+/* Garante que celulares/tablets touch não carreguem/exibam a arte do banner. */
+@media (max-width: 900px), (hover: none), (pointer: coarse) {
+  .hero::after {
+    content: none;
+    background-image: none;
+  }
+}

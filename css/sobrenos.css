@@ -6,7 +6,7 @@
 .about-hero {
   position: relative;
 
-  min-height: 580px;
+  min-height: 500px;
 
   display: flex;
   align-items: center;
@@ -16,8 +16,8 @@
 
 .about-hero__content {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 420px;
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
   align-items: center;
 }
 
@@ -69,102 +69,6 @@
 
   font-size: 1rem;
   line-height: 1.75;
-}
-
-.about-hero__visual {
-  position: relative;
-
-  width: 400px;
-  height: 400px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  justify-self: end;
-}
-
-.about-hero__circle {
-  position: absolute;
-  inset: 0;
-
-  border: 1px solid rgba(255, 0, 30, 0.16);
-  border-radius: 50%;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(255, 0, 30, 0.08),
-      rgba(255, 0, 30, 0.015) 55%,
-      transparent 70%
-    );
-
-  animation: aboutPulse 4s ease-in-out infinite;
-}
-
-.about-hero__visual::before,
-.about-hero__visual::after {
-  content: "";
-
-  position: absolute;
-
-  background: rgba(255, 0, 30, 0.22);
-}
-
-.about-hero__visual::before {
-  width: 1px;
-  height: 115%;
-
-  left: 50%;
-  top: -7.5%;
-}
-
-.about-hero__visual::after {
-  width: 115%;
-  height: 1px;
-
-  left: -7.5%;
-  top: 50%;
-}
-
-.about-hero__visual-label,
-.about-hero__visual strong {
-  position: relative;
-  z-index: 2;
-
-  text-transform: uppercase;
-}
-
-.about-hero__visual-label {
-  color: var(--color-muted);
-
-  font-size: 0.7rem;
-  font-weight: 800;
-
-  letter-spacing: 0.3em;
-}
-
-.about-hero__visual strong {
-  margin-top: 7px;
-
-  color: var(--color-white);
-
-  font-size: 2.2rem;
-  font-weight: 800;
-}
-
-@keyframes aboutPulse {
-  0%,
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
-
-  50% {
-    transform: scale(1.04);
-    opacity: 1;
-  }
 }
 
 .about-intro {
@@ -653,11 +557,6 @@
     gap: 50px;
   }
 
-  .about-hero__visual {
-    width: 330px;
-    height: 330px;
-  }
-
   .about-system__layout {
     grid-template-columns: 280px minmax(0, 1fr);
     gap: 50px;
@@ -676,15 +575,6 @@
   .about-hero__content {
     grid-template-columns: minmax(0, 1fr) 260px;
     gap: 35px;
-  }
-
-  .about-hero__visual {
-    width: 250px;
-    height: 250px;
-  }
-
-  .about-hero__visual strong {
-    font-size: 1.7rem;
   }
 
   .about-intro__grid {
@@ -730,10 +620,6 @@
 
   .about-hero__content {
     display: block;
-  }
-
-  .about-hero__visual {
-    display: none;
   }
 
   .about-hero__title {
@@ -903,9 +789,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .about-hero__circle {
-    animation: none;
-  }
 
   .about-reveal {
     opacity: 1;
