@@ -46,12 +46,10 @@ function iniciarLoopBoosters(track) {
   if (!track) return;
 
   const itensOriginais = Array.from(
-      track.querySelectorAll(".boosters__item")
-    );
+    track.querySelectorAll(".boosters__item")
+  );
 
   if (!itensOriginais.length) return;
-
-  
 
   itensOriginais.forEach(item => {
     const clone = item.cloneNode(true);
@@ -66,9 +64,7 @@ function iniciarLoopBoosters(track) {
 
   let posicao = 0;
 
-  
-
-  const velocidade = 0.025;
+  const velocidade = 0.012;
 
   let larguraOriginal = 0;
   let ultimoTempo = performance.now();
@@ -96,20 +92,16 @@ function iniciarLoopBoosters(track) {
 
   function animar(tempoAtual) {
     const delta = Math.min(
-        tempoAtual - ultimoTempo,
-        32
-      );
+      tempoAtual - ultimoTempo,
+      32
+    );
 
     ultimoTempo =
       tempoAtual;
 
-    
-
     posicao +=
       velocidade *
       delta;
-
-    
 
     if (
       posicao >= larguraOriginal
@@ -133,8 +125,8 @@ function iniciarLoopBoosters(track) {
 
 async function carregarBoosters() {
   const boostersTrack = document.getElementById(
-      "boosters-track"
-    );
+    "boosters-track"
+  );
 
   if (!boostersTrack) {
     console.error(
@@ -146,8 +138,8 @@ async function carregarBoosters() {
 
   try {
     const response = await fetch(
-        "https://api.noturnos.xyz/api/booster"
-      );
+      "https://api.noturnos.xyz/api/booster"
+    );
 
     if (!response.ok) {
       throw new Error(
@@ -158,16 +150,15 @@ async function carregarBoosters() {
     const dados = await response.json();
 
     const boosters = Array.isArray(dados)
-        ? dados
-        : Array.isArray(dados.boosters)
-          ? dados.boosters
-          : Array.isArray(dados.booster)
-            ? dados.booster
-            : [];
+      ? dados
+      : Array.isArray(dados.boosters)
+        ? dados.boosters
+        : Array.isArray(dados.booster)
+          ? dados.booster
+          : [];
 
     if (!boosters.length) {
-      boostersTrack.innerHTML =
-        "";
+      boostersTrack.innerHTML = "";
 
       return;
     }
@@ -186,8 +177,8 @@ async function carregarBoosters() {
           "error",
           () => {
             const item = img.closest(
-                ".boosters__item"
-              );
+              ".boosters__item"
+            );
 
             const id = item?.dataset?.userId ||
               "0";
@@ -211,8 +202,7 @@ async function carregarBoosters() {
       error
     );
 
-    boostersTrack.innerHTML =
-      "";
+    boostersTrack.innerHTML = "";
   }
 }
 
