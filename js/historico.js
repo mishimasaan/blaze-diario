@@ -1,4 +1,4 @@
-const HISTORICO_API_BASE = "https://api.noturnos.xyz";
+const HISTORICO_API_BASE = "https://api.blazediarios.com";
 const HISTORICO_API = `${HISTORICO_API_BASE}/api/historico`;
 
 const historicoState = {

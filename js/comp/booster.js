@@ -146,7 +146,7 @@ async function carregarBoosters() {
 
   try {
     const response = await fetch(
-        "https://api.noturnos.xyz/api/booster"
+        "https://api.blazediarios.com/api/booster"
       );
 
     if (!response.ok) {

@@ -1,4 +1,4 @@
-const DIARIOS_API = "https://api.noturnos.xyz/api/diarios";
+const DIARIOS_API = "https://api.blazediarios.com/api/diarios";
 
 const MODOS = [
   "solo",

@@ -1,4 +1,4 @@
-const NAVBAR_API_BASE = "https://api.noturnos.xyz";
+const NAVBAR_API_BASE = "https://api.blazediarios.com";
 
 function avatarPadraoDiscord(id) {
   try {

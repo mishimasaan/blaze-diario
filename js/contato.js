@@ -156,7 +156,7 @@ function criarCardStaff(staff) {
 async function carregarStaffs() {
   try {
     const response = await fetch(
-        "https://api.noturnos.xyz/api/staffs"
+        "https://api.blazediarios.com/api/staffs"
       );
 
     if (!response.ok) {

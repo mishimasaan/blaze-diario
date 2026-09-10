@@ -95,53 +95,48 @@ fetch("./comp/discord.html")
     );
   });
 
-Promise.all([
-  fetch("./comp/booster.html")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error(
-          `Erro booster.html: ${response.status}`
+const boosterComponent = document.querySelector(
+  "#booster-component"
+);
+
+if (boosterComponent) {
+  Promise.all([
+    fetch("./comp/booster.html")
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(
+            `Erro booster.html: ${response.status}`
+          );
+        }
+
+        return response.text();
+      }),
+
+    carregarScript(
+      "./js/comp/booster.js"
+    )
+  ])
+    .then(([html]) => {
+      boosterComponent.innerHTML = html;
+
+      if (
+        typeof window.iniciarBooster ===
+        "function"
+      ) {
+        window.iniciarBooster();
+      } else {
+        console.error(
+          "window.iniciarBooster não existe"
         );
       }
-
-      return response.text();
-    }),
-
-  carregarScript(
-    "./js/comp/booster.js"
-  )
-])
-  .then(([html]) => {
-    const component = document.querySelector(
-        "#booster-component"
-      );
-
-    if (!component) {
+    })
+    .catch(error => {
       console.error(
-        "#booster-component não encontrado"
+        "Erro ao carregar booster:",
+        error
       );
-      return;
-    }
-
-    component.innerHTML = html;
-
-    if (
-      typeof window.iniciarBooster ===
-      "function"
-    ) {
-      window.iniciarBooster();
-    } else {
-      console.error(
-        "window.iniciarBooster não existe"
-      );
-    }
-  })
-  .catch(error => {
-    console.error(
-      "Erro ao carregar booster:",
-      error
-    );
-  });
+    });
+}
 
 fetch("./comp/footer.html")
   .then(response => {
