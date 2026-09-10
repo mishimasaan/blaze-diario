@@ -32,7 +32,7 @@ Promise.all([
     }),
 
   carregarScript(
-    "./js/comp/navbar.js"
+    "/js/comp/navbar.js"
   )
 ])
   .then(([html]) => {
@@ -113,7 +113,7 @@ if (boosterComponent) {
       }),
 
     carregarScript(
-      "./js/comp/booster.js"
+      "/js/comp/booster.js"
     )
   ])
     .then(([html]) => {
