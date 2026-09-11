@@ -899,7 +899,7 @@ async function carregarHistoricoPessoal(userId) {
 
           <div class="stats-best__body">
             <span class="stats-best__label">Melhor entre as recentes</span>
-            <span class="stats-best__result ${venceu ? "" : "stats-best__result--loss"}">${venceu ? "✓ Vitória" : "Derrota"}</span>
+            <span class="stats-best__result ${venceu ? "" : "stats-best__result--loss"}">${venceu ? '<span class="icon icon--check" aria-hidden="true"></span> Vitória' : "Derrota"}</span>
             <h3 class="stats-best__title">${statsEscaparHTML(statsNomeModo(partida))}</h3>
             <div class="stats-best__meta">${statsEscaparHTML(statsFormatarData(partida?.data || partida?.date))} • ${statsEscaparHTML(partida?.horario || "—")}</div>
 

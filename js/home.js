@@ -105,9 +105,7 @@ function definirTextoBotao(
     ${
       mostrarSeta
         ? `
-          <span aria-hidden="true">
-            →
-          </span>
+          <span class="icon icon--arrow-right" aria-hidden="true"></span>
         `
         : ""
     }

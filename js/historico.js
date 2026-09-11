@@ -342,7 +342,7 @@ function historicoRenderTabela(partidas) {
             type="button"
             data-historico-id="${historicoEscaparHTML(partida.id)}"
           >
-            Ver detalhes →
+            Ver detalhes <span class="icon icon--arrow-right" aria-hidden="true"></span>
           </button>
         </td>
       </tr>
@@ -377,7 +377,7 @@ function historicoRenderCards(partidas) {
             type="button"
             data-historico-id="${historicoEscaparHTML(partida.id)}"
           >
-            Detalhes →
+            Detalhes <span class="icon icon--arrow-right" aria-hidden="true"></span>
           </button>
         </div>
       </article>

@@ -145,10 +145,14 @@
 }
 
 .error-page__link::after {
-  content: "→";
+  content: "";
+  width: 0.9rem;
+  height: 0.9rem;
   margin-left: 18px;
-  color: var(--color-primary);
-  font-size: 0.9rem;
+  display: inline-block;
+  background: var(--color-primary);
+  -webkit-mask: url("/assets/icons/arrow-right.svg") center / contain no-repeat;
+  mask: url("/assets/icons/arrow-right.svg") center / contain no-repeat;
   transition: transform 0.2s ease;
 }
 

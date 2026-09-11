@@ -26,6 +26,56 @@ a {
   text-decoration: none;
 }
 
+.icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  flex: 0 0 auto;
+  background-color: currentColor;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  vertical-align: -0.125em;
+}
+
+.icon--arrow-left {
+  -webkit-mask-image: url("/assets/icons/arrow-left.svg");
+  mask-image: url("/assets/icons/arrow-left.svg");
+}
+
+.icon--arrow-right {
+  -webkit-mask-image: url("/assets/icons/arrow-right.svg");
+  mask-image: url("/assets/icons/arrow-right.svg");
+}
+
+.icon--check {
+  -webkit-mask-image: url("/assets/icons/check.svg");
+  mask-image: url("/assets/icons/check.svg");
+}
+
+.icon--chevron-down {
+  -webkit-mask-image: url("/assets/icons/chevron-down.svg");
+  mask-image: url("/assets/icons/chevron-down.svg");
+}
+
+.icon--chevron-left {
+  -webkit-mask-image: url("/assets/icons/chevron-left.svg");
+  mask-image: url("/assets/icons/chevron-left.svg");
+}
+
+.icon--chevron-right {
+  -webkit-mask-image: url("/assets/icons/chevron-right.svg");
+  mask-image: url("/assets/icons/chevron-right.svg");
+}
+
+.icon--x {
+  -webkit-mask-image: url("/assets/icons/x.svg");
+  mask-image: url("/assets/icons/x.svg");
+}
+
 button,
 input,
 textarea {

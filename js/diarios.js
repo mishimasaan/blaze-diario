@@ -341,7 +341,7 @@ function criarCard(
                 data-horario="${horarioSeguro}"
               >
                 <span>Participar</span>
-                <span aria-hidden="true">→</span>
+                <span class="icon icon--arrow-right" aria-hidden="true"></span>
               </button>
             `
         }
@@ -1088,7 +1088,7 @@ function blocoDiscordConectado(
       </div>
 
       <span class="checkout-discord__status">
-        ✓
+        <span class="icon icon--check" aria-hidden="true"></span>
       </span>
 
     </div>
@@ -1813,7 +1813,7 @@ async function consultarPagamento(
         <div class="checkout__success">
 
           <div class="checkout__success-mark">
-            ✓
+            <span class="icon icon--check" aria-hidden="true"></span>
           </div>
 
           <span class="checkout__eyebrow">
