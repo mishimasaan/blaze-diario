@@ -414,8 +414,53 @@
 
 
 @media (max-width: 900px), (hover: none), (pointer: coarse) {
+  /* Transição mais suave entre o hero e os cards no mobile/Android. */
   .hero::after {
-    content: none;
-    background-image: none;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 190px;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+      radial-gradient(
+        ellipse at 50% 100%,
+        rgba(255, 0, 30, 0.13) 0%,
+        rgba(255, 0, 30, 0.07) 34%,
+        rgba(255, 0, 30, 0.025) 52%,
+        rgba(255, 0, 30, 0) 76%
+      );
+  }
+
+  .daily-modes {
+    position: relative;
+  }
+
+  .daily-modes::before {
+    content: "";
+    position: absolute;
+    top: -105px;
+    left: 0;
+    right: 0;
+    height: 210px;
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 0, 30, 0) 0%,
+        rgba(255, 0, 30, 0.035) 38%,
+        rgba(255, 0, 30, 0.055) 52%,
+        rgba(255, 0, 30, 0.02) 70%,
+        rgba(255, 0, 30, 0) 100%
+      );
+  }
+
+  .daily-modes > .container {
+    position: relative;
+    z-index: 1;
   }
 }
