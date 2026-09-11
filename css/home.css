@@ -464,3 +464,20 @@
     z-index: 1;
   }
 }
+
+@media (max-width: 900px), (hover: none), (pointer: coarse) {
+  .hero::before,
+  .hero__visual::before,
+  .daily-card::before {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+    filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .daily-card {
+    background: var(--color-card) !important;
+    box-shadow: none !important;
+  }
+}
