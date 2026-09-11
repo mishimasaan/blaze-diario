@@ -387,12 +387,6 @@
   align-items: center;
   gap: 11px;
   border-bottom: 1px solid var(--color-border);
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 30, 0.035),
-      transparent 50%
-    );
   box-sizing: border-box;
   cursor: pointer;
   pointer-events: auto;
