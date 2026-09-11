@@ -1708,3 +1708,12 @@ body.stats-detail-open { overflow: hidden; }
     display: none;
   }
 }
+
+/* Lucro total do perfil acompanha o sinal do valor. */
+.stats-card--profit strong.is-positive {
+  color: #31da7e;
+}
+
+.stats-card--profit strong.is-negative {
+  color: #ff4658;
+}

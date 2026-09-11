@@ -315,12 +315,20 @@ async function renderizarStats(data) {
     ) || 0
   );
 
+  const lucroTotal = Number(
+    stats.saldoLiquido ?? stats.lucroLiquido ?? stats.lucro ?? 0
+  ) || 0;
+
   atualizarTexto(
     "#stats-lucro",
-    formatarDinheiro(
-      stats.saldoLiquido ?? stats.lucroLiquido ?? stats.lucro
-    )
+    formatarDinheiro(lucroTotal)
   );
+
+  const lucroElement = document.querySelector("#stats-lucro");
+  if (lucroElement) {
+    lucroElement.classList.toggle("is-positive", lucroTotal > 0);
+    lucroElement.classList.toggle("is-negative", lucroTotal < 0);
+  }
 
   const rankings = await carregarRankings(
       id

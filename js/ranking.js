@@ -417,7 +417,7 @@ function renderRanking() {
 
               </div>
 
-              <strong class="ranking-player__value">
+              <strong class="ranking-player__value${getValueClass(player[currentRanking])}">
                 ${formatValue(
                   player[
                     currentRanking
@@ -591,6 +591,25 @@ function updateMeCard() {
     sortedPlayers[index],
     index + 1
   );
+}
+
+
+function getValueClass(value) {
+  if (currentRanking !== "lucro") {
+    return "";
+  }
+
+  const number = Number(value || 0);
+
+  if (number > 0) {
+    return " is-positive";
+  }
+
+  if (number < 0) {
+    return " is-negative";
+  }
+
+  return "";
 }
 
 function formatValue(value) {
