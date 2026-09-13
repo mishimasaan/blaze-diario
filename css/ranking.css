@@ -1138,3 +1138,262 @@
 .ranking-player:first-child .ranking-player__value.is-negative {
   color: #ff4658;
 }
+
+/* Top 3 em destaque */
+.ranking-podium {
+  margin: 6px 0 28px;
+}
+
+.ranking-podium[hidden] {
+  display: none;
+}
+
+.ranking-podium__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 14px;
+}
+
+.ranking-podium-card {
+  position: relative;
+  min-width: 0;
+  min-height: 238px;
+  padding: 26px 18px 20px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 50% -12%, rgba(255,255,255,.08), transparent 44%),
+    linear-gradient(180deg, rgba(255,255,255,.018), transparent 48%),
+    var(--color-card);
+  text-align: center;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.ranking-podium-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.15);
+}
+
+.ranking-podium-card--1 {
+  min-height: 278px;
+  padding-top: 30px;
+  border-color: rgba(255, 0, 30, .42);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255,0,30,.19), transparent 45%),
+    linear-gradient(180deg, rgba(255,0,30,.05), transparent 55%),
+    var(--color-card);
+  box-shadow: 0 16px 44px rgba(255,0,30,.08);
+}
+
+.ranking-podium-card--2 {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(207,216,225,.12), transparent 44%),
+    var(--color-card);
+}
+
+.ranking-podium-card--3 {
+  background:
+    radial-gradient(circle at 50% 0%, rgba(194,126,72,.12), transparent 44%),
+    var(--color-card);
+}
+
+.ranking-podium-card--me {
+  outline: 2px solid rgba(255,0,30,.28);
+  outline-offset: 2px;
+}
+
+.ranking-podium-card__position {
+  position: absolute;
+  top: 13px;
+  left: 14px;
+  color: rgba(255,255,255,.16);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ranking-podium-card--1 .ranking-podium-card__position {
+  color: rgba(255,0,30,.24);
+}
+
+.ranking-podium-card__avatar-wrap {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.ranking-podium-card__avatar {
+  width: 88px;
+  height: 88px;
+  border: 3px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  background: var(--color-bg-soft);
+  object-fit: cover;
+}
+
+.ranking-podium-card--1 .ranking-podium-card__avatar {
+  width: 106px;
+  height: 106px;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 5px rgba(255,0,30,.08), 0 10px 34px rgba(255,0,30,.18);
+}
+
+.ranking-podium-card__badge {
+  position: absolute;
+  right: -4px;
+  bottom: 1px;
+  min-width: 30px;
+  height: 30px;
+  padding: 0 7px;
+  display: grid;
+  place-items: center;
+  border: 3px solid var(--color-card);
+  border-radius: 999px;
+  background: #20242a;
+  color: #fff;
+  font-size: .68rem;
+  font-weight: 850;
+}
+
+.ranking-podium-card--1 .ranking-podium-card__badge {
+  background: var(--color-primary);
+}
+
+.ranking-podium-card--2 .ranking-podium-card__badge {
+  background: #737d88;
+}
+
+.ranking-podium-card--3 .ranking-podium-card__badge {
+  background: #875f43;
+}
+
+.ranking-podium-card__identity {
+  min-width: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ranking-podium-card__identity strong,
+.ranking-podium-card__identity span {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ranking-podium-card__identity strong {
+  color: var(--color-white);
+  font-size: .94rem;
+  font-weight: 800;
+}
+
+.ranking-podium-card--1 .ranking-podium-card__identity strong {
+  font-size: 1.08rem;
+}
+
+.ranking-podium-card__identity span {
+  color: var(--color-muted);
+  font-size: .67rem;
+}
+
+.ranking-podium-card__metric {
+  width: 100%;
+  margin-top: 16px;
+  padding-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid var(--color-border);
+}
+
+.ranking-podium-card__metric span {
+  color: var(--color-muted);
+  font-size: .55rem;
+  font-weight: 750;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.ranking-podium-card__metric strong {
+  color: var(--color-white);
+  font-size: .9rem;
+  font-weight: 850;
+}
+
+.ranking-podium-card--1 .ranking-podium-card__metric strong {
+  color: var(--color-primary);
+}
+
+.ranking-podium-card__metric strong.is-positive { color: #31da7e; }
+.ranking-podium-card__metric strong.is-negative { color: #ff4658; }
+
+@media (max-width: 700px) {
+  .ranking-podium__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .ranking-podium-card,
+  .ranking-podium-card--1 {
+    min-height: 190px;
+    padding: 20px 9px 14px;
+    border-radius: 10px;
+  }
+
+  .ranking-podium-card__position {
+    top: 9px;
+    left: 9px;
+    font-size: 2.15rem;
+  }
+
+  .ranking-podium-card__avatar,
+  .ranking-podium-card--1 .ranking-podium-card__avatar {
+    width: 64px;
+    height: 64px;
+  }
+
+  .ranking-podium-card__avatar-wrap { margin-bottom: 11px; }
+  .ranking-podium-card__badge {
+    min-width: 25px;
+    height: 25px;
+    border-width: 2px;
+    font-size: .58rem;
+  }
+  .ranking-podium-card__identity strong,
+  .ranking-podium-card--1 .ranking-podium-card__identity strong { font-size: .72rem; }
+  .ranking-podium-card__identity span { font-size: .56rem; }
+  .ranking-podium-card__metric {
+    margin-top: 11px;
+    padding-top: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .ranking-podium-card__metric span { font-size: .47rem; }
+  .ranking-podium-card__metric strong,
+  .ranking-podium-card--1 .ranking-podium-card__metric strong { font-size: .7rem; }
+}
+
+@media (max-width: 430px) {
+  .ranking-podium-card,
+  .ranking-podium-card--1 {
+    min-height: 172px;
+    padding-inline: 6px;
+  }
+  .ranking-podium-card__avatar,
+  .ranking-podium-card--1 .ranking-podium-card__avatar {
+    width: 54px;
+    height: 54px;
+  }
+  .ranking-podium-card__position { font-size: 1.7rem; }
+  .ranking-podium-card__identity span { display: none; }
+}
