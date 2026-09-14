@@ -1248,8 +1248,8 @@
   position: absolute;
   right: -4px;
   bottom: 1px;
-  min-width: 30px;
-  height: 30px;
+  min-width: 12px;
+  height: 13px;
   padding: 0 7px;
   display: grid;
   place-items: center;
