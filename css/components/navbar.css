@@ -47,8 +47,7 @@
   transition: color 0.2s ease;
 }
 
-.header__link:hover,
-.header__link--active {
+.header__link:hover, .header__link--active {
   color: var(--color-white);
 }
 
@@ -74,12 +73,7 @@
   flex-shrink: 0;
 }
 
-.header-user[hidden],
-.header-user__menu[hidden],
-.mobile-profile[hidden],
-.mobile-profile__logout[hidden],
-#header-discord-login[hidden],
-#mobile-discord-login[hidden] {
+.header-user[hidden], .header-user__menu[hidden], .mobile-profile[hidden], .mobile-profile__logout[hidden], #header-discord-login[hidden], #mobile-discord-login[hidden] {
   display: none;
 }
 
@@ -101,10 +95,7 @@
   cursor: pointer;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease,
-    transform 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .header .button--discord::after {
@@ -116,11 +107,7 @@
   height: 14px;
   border: 2px solid #05080b;
   border-radius: 50%;
-  background:
-    #11161c
-    url("../../assets/icons/link.svg")
-    center / 8px 8px
-    no-repeat;
+  background: #11161c url("../../assets/icons/link.svg") center / 8px 8px no-repeat;
   pointer-events: none;
 }
 
@@ -135,9 +122,7 @@
   opacity: 0.82;
   object-fit: contain;
   pointer-events: none;
-  transition:
-    opacity 0.2s ease,
-    transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .header .button--discord:hover {
@@ -174,9 +159,7 @@
   -webkit-tap-highlight-color: transparent;
   user-select: none;
   -webkit-user-select: none;
-  transition:
-    border-color 0.2s ease,
-    background-color 0.2s ease;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .header-user__button:hover {
@@ -224,9 +207,7 @@
   font-size: 0.68rem;
   line-height: 1;
   pointer-events: none;
-  transition:
-    color 0.2s ease,
-    transform 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .header-user__button:hover .header-user__arrow {
@@ -258,7 +239,6 @@
     opacity: 0;
     transform: translateY(-4px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -322,14 +302,12 @@
   color: rgba(255, 75, 90, 0.75);
 }
 
-.header-user__menu-item--logout:hover,
-.header-user__menu-item--logout:active {
+.header-user__menu-item--logout:hover, .header-user__menu-item--logout:active {
   background: transparent;
   color: rgba(255, 75, 90, 0.9);
 }
 
-.header-user__menu-item--logout:hover .header-user__menu-icon,
-.header-user__menu-item--logout:active .header-user__menu-icon {
+.header-user__menu-item--logout:hover .header-user__menu-icon, .header-user__menu-item--logout:active .header-user__menu-icon {
   color: rgba(255, 75, 90, 0.75);
 }
 
@@ -365,9 +343,7 @@
   display: block;
   background: var(--color-white);
   pointer-events: none;
-  transition:
-    transform 0.2s ease,
-    opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .mobile-menu {
@@ -397,12 +373,7 @@
 }
 
 .mobile-profile:active {
-  background:
-    linear-gradient(
-      90deg,
-      rgba(255, 0, 30, 0.09),
-      transparent 65%
-    );
+  background: linear-gradient( 90deg, rgba(255, 0, 30, 0.09), transparent 65% );
 }
 
 .mobile-profile__avatar {
@@ -474,7 +445,6 @@
   .header__nav {
     gap: 25px;
   }
-
   .header-user__button {
     width: 50px;
     height: 50px;
@@ -484,22 +454,17 @@
     justify-content: center;
     border-radius: 50%;
   }
-
   .header-user__avatar {
     width: 38px;
     height: 38px;
     flex-basis: 38px;
   }
-
-  .header-user__name,
-  .header-user__arrow {
+  .header-user__name, .header-user__arrow {
     display: none;
   }
-
   .header-user__menu {
     width: 215px;
   }
-
   .header-user__menu-item {
     min-height: 48px;
     padding: 0 13px;
@@ -510,27 +475,21 @@
   .header {
     height: auto;
   }
-
   .header__content {
     min-height: 76px;
   }
-
   .header__logo img {
     width: 128px;
   }
-
   .header__nav {
     display: none;
   }
-
   .header-account {
     display: none;
   }
-
   .header__menu-button {
     display: flex;
   }
-
   .mobile-menu {
     width: 100%;
     max-height: none;
@@ -542,7 +501,6 @@
     padding-bottom: 14px;
     box-sizing: border-box;
   }
-
   .mobile-menu a {
     position: relative;
     width: 100%;
@@ -561,26 +519,20 @@
     cursor: pointer;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
-    transition:
-      color 0.2s ease,
-      background-color 0.2s ease;
+    transition: color 0.2s ease, background-color 0.2s ease;
   }
-
   .mobile-menu a:hover {
     background: rgba(255, 255, 255, 0.02);
     color: var(--color-primary);
   }
-
   .mobile-menu a:active {
     background: rgba(255, 0, 30, 0.05);
     color: var(--color-primary);
   }
-
   .mobile-menu a.header__link--active {
     color: var(--color-primary);
     background: rgba(255, 0, 30, 0.04);
   }
-
   .mobile-menu a.header__link--active::after {
     content: "";
     position: absolute;
@@ -591,17 +543,14 @@
     border-radius: 3px;
     background: var(--color-primary);
   }
-
   #mobile-discord-login {
     color: var(--color-primary);
     min-height: 54px;
   }
-
   .mobile-profile {
     min-height: 72px;
     flex-shrink: 0;
   }
-
   .mobile-profile__logout {
     min-height: 54px;
     flex-shrink: 0;
@@ -612,46 +561,37 @@
   .header__content {
     min-height: 70px;
   }
-
   .header__logo img {
     width: 118px;
   }
-
   .header__menu-button {
     width: 48px;
     height: 48px;
     min-width: 48px;
     min-height: 48px;
   }
-
   .mobile-menu {
     max-height: none;
     height: auto;
     overflow: visible;
     padding-bottom: 18px;
   }
-
   .mobile-profile {
     min-height: 68px;
     padding: 13px 14px;
   }
-
   .mobile-profile__avatar {
     width: 42px;
     height: 42px;
     flex-basis: 42px;
   }
-
-  .mobile-profile__identity strong,
-  .mobile-profile__identity span {
+  .mobile-profile__identity strong, .mobile-profile__identity span {
     max-width: 190px;
   }
-
   .mobile-menu a {
     min-height: 54px;
     padding: 0 16px;
   }
-
   .mobile-profile__logout {
     min-height: 54px;
     padding: 0 16px;

@@ -115,16 +115,13 @@
     margin-top: 20px;
     padding-top: 40px;
   }
-
   .footer__content {
     grid-template-columns: 1fr;
     gap: 35px;
   }
-
   .footer__description {
     max-width: 280px;
   }
-
   .footer__bottom {
     margin-top: 35px;
   }
